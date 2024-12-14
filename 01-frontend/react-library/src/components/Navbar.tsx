@@ -1,6 +1,6 @@
 export default function Navbar(){
     return (
-        <nav className='navbar navbar-light navbar-expand-lg py-0'>
+        <nav className='navbar navbar-light navbar-expand-lg shadow' style={{backgroundColor: "#e3f2fd"}}>
         <div className='container-fluid'>
           <img className='nav-logo d-inline-block px-4' src="/main-ave-logo.svg" alt="" />
           <button 
@@ -17,7 +17,7 @@ export default function Navbar(){
           <div className='collapse navbar-collapse' id='navbarNavDropdown'>
             <ul className='navbar-nav'>
               <li className='nav-item'>
-                <a className='nav-link ' href="#">Home</a>
+                <a className='nav-link active' href="#">Home</a>
               </li>
               <li className='nav-item'>
                 <a className='nav-link' href="#">Search Books</a>

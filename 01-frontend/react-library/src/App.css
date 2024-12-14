@@ -12,23 +12,27 @@
 
 .nav-logo {
   clip-path: inset(0);
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: auto;
 }
 
 .nav-link {
-  color: #086788;
+  color: #051939;
   border-bottom: 2px solid transparent;
 }
 
-.nav-link:hover, .nav-link:focus {
-  border-bottom: 2px solid #dd1c1a;
+.nav-link:hover, 
+.nav-link:focus,
+.nav-link:active {
+  border-bottom: 2px solid #0d47a1;
+  color: #2196f3 !important;
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #086788;
-  --bs-btn-border-color: #086788;
-  --bs-btn-hover-bg: #086788;
+  --bs-btn-color: #051939;
+  --bs-btn-border-color: #051939;
+  --bs-btn-hover-bg: #051939;
+  --bs-btn-hover-border: #051939;
 }
 
 /* .logo {
