@@ -1,8 +1,34 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+}
+
+/* .nav-logo {
+  background-image: url('../src/assets/main-ave-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 250px;
+} */
+
+.nav-logo {
+  clip-path: inset(0);
+  width: 150px;
+  height: 150px;
+}
+
+.nav-link {
+  color: #086788;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover, .nav-link:focus {
+  border-bottom: 2px solid #dd1c1a;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: #086788;
+  --bs-btn-border-color: #086788;
+  --bs-btn-hover-bg: #086788;
 }
 
 /* .logo {
