@@ -33,6 +33,21 @@
   --bs-btn-hover-border: #051939;
 }
 
+.explore-btn {
+  border: 2px solid transparent;
+}
+
+.explore-btn:hover, .explore-btn:focus {
+  border: 2px solid #e3f2fd;
+}
+
+.hero {
+  background-image: url('./assets/reading.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 35%;
+}
+
 /* .logo {
   height: 6em;
   padding: 1.5em;
