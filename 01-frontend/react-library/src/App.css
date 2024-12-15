@@ -2,14 +2,6 @@
   margin: 0 auto;
 }
 
-/* .nav-logo {
-  background-image: url('../src/assets/main-ave-logo.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 250px;
-  height: 250px;
-} */
-
 .nav-logo {
   clip-path: inset(0);
   width: 180px;
