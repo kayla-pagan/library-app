@@ -19,14 +19,19 @@
 .nav-link {
   color: #051939;
   border-bottom: 2px solid transparent;
+  transition: all 0.5s ease-in-out;
 }
 
 .nav-link:hover, 
-.nav-link:focus,
-.nav-link:active {
+.nav-link:focus {
   border-bottom: 2px solid #0d47a1;
   color: #2196f3 !important;
-  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-link:active {
+  border-bottom: 2px solid #0d47a1 !important;
+  color: #2196f3 !important;
 }
 
 .btn-outline-dark {
