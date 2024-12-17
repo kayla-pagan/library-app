@@ -8,10 +8,13 @@
   height: auto;
 }
 
+.nav-link, .btn {
+  transition: all 0.3s ease-in-out;
+}
+
 .nav-link {
   color: #051939;
   border-bottom: 2px solid transparent;
-  transition: all 0.5s ease-in-out;
 }
 
 .nav-link:hover, 
@@ -46,6 +49,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 35%;
+}
+
+.col-image-left, 
+.col-image-right {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.col-image-left {
+  background-image: url("./assets/night-sky.svg");
+  height: 25em !important;
+}
+
+.col-image-right {
+  background-image: url("./assets/plant.svg");
+  height: 25em !important;
 }
 
 /* .logo {
