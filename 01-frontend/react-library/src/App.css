@@ -67,6 +67,12 @@
   height: 25em !important;
 }
 
+.lost {
+  background-image: url("./assets/lost.svg");
+    height: 25em !important;
+    width: "720"
+}
+
 /* .logo {
   height: 6em;
   padding: 1.5em;
