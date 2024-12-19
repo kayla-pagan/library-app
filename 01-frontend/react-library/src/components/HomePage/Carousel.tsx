@@ -1,5 +1,5 @@
 import Book from "./Book";
-import tiffanyBookImg from "../assets/book-tiffany-frank.svg";
+import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
 
 export default function Carousel() {
   return (

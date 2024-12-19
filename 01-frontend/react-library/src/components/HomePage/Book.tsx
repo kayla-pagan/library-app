@@ -1,4 +1,4 @@
-import tiffanyBookImg from "../assets/book-tiffany-frank.svg";
+import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
 
 export default function Book(){
     return (
