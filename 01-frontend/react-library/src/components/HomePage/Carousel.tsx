@@ -44,8 +44,6 @@ export default function Carousel() {
     fetchBooks();
   }, []);
 
-  console.log(books)
-
   if (isLoading) {
     return (
       <SpinnerLoading />
