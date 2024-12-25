@@ -1,7 +1,7 @@
 import React from "react";
 import Book from "./Book";
 import BookModel from "../../models/BookModels";
-import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
+import SpinnerLoading from "../../utils/SpinnerLoading";
 
 export default function Carousel() {
   const [books, setBooks] = React.useState<BookModel[]>([]);
@@ -44,11 +44,11 @@ export default function Carousel() {
     fetchBooks();
   }, []);
 
+  console.log(books)
+
   if (isLoading) {
     return (
-      <div className="container m-5">
-        <p>Loading....</p>
-      </div>
+      <SpinnerLoading />
     );
   }
 
@@ -127,7 +127,7 @@ export default function Carousel() {
       {/* {mobile} */}
       <div className="d-lg-none mt-3">
         <div className="row d-flex justify-content-center align-items-center">
-          <Book book={books[7]} key={books[7].id} />
+          {books[7] && <Book book={books[7]} key={books[7].id} />}
         </div>
       </div>
       <div className="home-carousel-title mt-3 text-center">
