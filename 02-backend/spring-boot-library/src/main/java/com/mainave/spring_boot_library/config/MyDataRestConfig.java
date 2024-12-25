@@ -23,7 +23,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(Book.class, config, unsupportedActions);
 
         // Configure CORS Mapping
-        String allowedOrigins = "http://localhost:3000";
+        String allowedOrigins = "http://localhost:5173";
         corsRegistry.addMapping(config.getBasePath() + "/**").allowedOrigins(allowedOrigins);
     }
 
