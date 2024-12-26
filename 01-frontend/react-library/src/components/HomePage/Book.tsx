@@ -6,7 +6,7 @@ interface BookProps {
 }
 
 export default function Book({book}: BookProps): React.ReactElement {
-    const {id, title, author, description, copies, copiesAvailable, category, img} = book
+    const {title, author, img} = book
 
     return (
         <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3">
