@@ -21,11 +21,11 @@ export default function SearchBooks() {
       try {
         const baseUrl: string = "http://localhost:8080/api/books";
         let url: string = "";
-        
-        if(searchUrl === ""){
-            url = `${baseUrl}?page=${currentPage - 1}&size=${booksPerPage}`;
+
+        if (searchUrl === "") {
+          url = `${baseUrl}?page=${currentPage - 1}&size=${booksPerPage}`;
         } else {
-            url = baseUrl + searchUrl
+          url = baseUrl + searchUrl;
         }
 
         const response = await fetch(url);
@@ -74,12 +74,14 @@ export default function SearchBooks() {
     );
   }
 
-  function handleSearchChange(){
-    if(search === ""){
-        setSearchUrl('')
+  function handleSearchChange() {
+    if (search === "") {
+      setSearchUrl("");
     } else {
-        setSearchUrl(`/search/findByTitleContaining?title=${search}&page=0&size=${booksPerPage}`)
-        setCurrentPage(1)
+      setSearchUrl(
+        `/search/findByTitleContaining?title=${search}&page=0&size=${booksPerPage}`
+      );
+      setCurrentPage(1);
     }
   }
 
@@ -102,9 +104,12 @@ export default function SearchBooks() {
                 type="search"
                 placeholder="Search"
                 aria-labelledby="Search"
-                onChange={e => setSearch(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
-              <button onClick={handleSearchChange} className="btn btn-outline">Search</button>
+              <button onClick={handleSearchChange} className="btn btn-outline">
+                Search
+              </button>
             </div>
           </div>
 
@@ -193,16 +198,32 @@ export default function SearchBooks() {
             </div>
           </div>
 
-          <div className="mt-3">
-            <h5>Number of results: ({totalAmountOfBooks})</h5>
-          </div>
-          <p>
-            {indexOfFirstBook + 1}-{lastItem} of {totalAmountOfBooks} items:
-          </p>
+          {totalAmountOfBooks > 0 ? (
+            <>
+              <div className="mt-3">
+                <h5>Number of results: ({totalAmountOfBooks})</h5>
+              </div>
+              <p>
+                {indexOfFirstBook + 1}-{lastItem} of {totalAmountOfBooks} items:
+              </p>
+              {books.map((book) => (
+                <Search book={book} key={book.id} />
+              ))}{" "}
+            </>
+          ) : (
+            <div className="m-5">
+              <h3>Can't find what you are searching for?</h3>
+              <a
+                className="btn btn-md px-4 me-md-2 fw-bold text-white"
+                style={{ backgroundColor: "#0d47a1" }}
+                type="button"
+                href="#"
+              >
+                Contact us
+              </a>
+            </div>
+          )}
 
-          {books.map((book) => (
-            <Search book={book} key={book.id} />
-          ))}
           {totalPages > 1 && (
             <Pagination
               currentPage={currentPage}
