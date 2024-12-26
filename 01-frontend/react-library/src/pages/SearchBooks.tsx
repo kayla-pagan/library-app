@@ -1,6 +1,7 @@
 import React from "react"
 import BookModel from "../models/BookModels";
 import SpinnerLoading from "../utils/SpinnerLoading";
+import Search from "../components/SearchBooksPage/Search";
 
 export default function SearchBooks(){
     const [books, setBooks] = React.useState<BookModel[]>([]);
@@ -88,9 +89,6 @@ export default function SearchBooks(){
                             <ul className="dropdown-menu" aria-labelledby="categoryDropdownMenu">
                                 <li>
                                     <a className="dropdown-item" href="#">All</a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item" href="#"></a>
                                 </li>
                                 <li>
                                     <a className="dropdown-item" href="#">Fantasy</a>
