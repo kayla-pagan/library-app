@@ -14,6 +14,7 @@ export default function SearchBooks() {
   const [totalPages, setTotalPages] = useState(0);
   const [search, setSearch] = React.useState("");
   const [searchUrl, setSearchUrl] = React.useState("");
+  const [categorySelection, setCategorySelection] = React.useState("Book category")
 
   React.useEffect(() => {
     async function fetchBooks() {
@@ -25,7 +26,8 @@ export default function SearchBooks() {
         if (searchUrl === "") {
           url = `${baseUrl}?page=${currentPage - 1}&size=${booksPerPage}`;
         } else {
-          url = baseUrl + searchUrl;
+          let searchWithPage = searchUrl.replace("<pageNumber>", `${currentPage - 1}`)
+          url = baseUrl + searchWithPage;
         }
 
         const response = await fetch(url);
@@ -75,13 +77,42 @@ export default function SearchBooks() {
   }
 
   function handleSearchChange() {
+    setCurrentPage(1);
+
     if (search === "") {
       setSearchUrl("");
     } else {
       setSearchUrl(
-        `/search/findByTitleContaining?title=${search}&page=0&size=${booksPerPage}`
+        `/search/findByTitleContaining?title=${search}&page=<pageNumber>&size=${booksPerPage}`
       );
-      setCurrentPage(1);
+    }
+    setCategorySelection("Book Category")
+  }
+
+  function handleCategoryChange(value: string){
+    const validCategories = [
+        "fantasy",
+        "health and wellness",
+        "horror",
+        "language",
+        "mystery",
+        "poetry",
+        "psychology",
+        "romance",
+        "science",
+        "science fiction",
+        "technology and programming",
+        "travel"
+    ]
+
+    setCurrentPage(1)
+    
+    if(validCategories.includes(value.toLowerCase())){
+        setCategorySelection(value)
+        setSearchUrl(`/search/findByCategory?category=${value}&page=<pageNumber>&size=${booksPerPage}`)
+    } else {
+        setCategorySelection("All")
+        setSearchUrl(`?page=<pageNumber>&size=${booksPerPage}`)
     }
   }
 
@@ -122,74 +153,74 @@ export default function SearchBooks() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Category
+                {categorySelection}
               </button>
 
               <ul
                 className="dropdown-menu"
                 aria-labelledby="categoryDropdownMenu"
               >
-                <li>
+                <li onClick={() => handleCategoryChange("All")}>
                   <a className="dropdown-item" href="#">
                     All
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Fantasy")}>
                   <a className="dropdown-item" href="#">
                     Fantasy
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Health and Wellness")}>
                   <a className="dropdown-item" href="#">
                     Health and Wellness
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Horror")}>
                   <a className="dropdown-item" href="#">
                     Horror
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Language")}>
                   <a className="dropdown-item" href="#">
                     Language
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Mystery")}>
                   <a className="dropdown-item" href="#">
                     Mystery
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Poetry")}>
                   <a className="dropdown-item" href="#">
                     Poetry
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Psychology")}>
                   <a className="dropdown-item" href="#">
                     Psychology
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Romance")}>
                   <a className="dropdown-item" href="#">
                     Romance
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Science")}>
                   <a className="dropdown-item" href="#">
                     Science
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Science Fiction")}>
                   <a className="dropdown-item" href="#">
                     Science Fiction
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Technology and Programming")}>
                   <a className="dropdown-item" href="#">
                     Technology and Programming
                   </a>
                 </li>
-                <li>
+                <li onClick={() => handleCategoryChange("Travel")}>
                   <a className="dropdown-item" href="#">
                     Travel
                   </a>
