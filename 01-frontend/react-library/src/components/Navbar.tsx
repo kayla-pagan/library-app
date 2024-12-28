@@ -2,8 +2,7 @@ import { Link, NavLink } from "react-router-dom"
 
 export default function Navbar(){
     const activeStyle = {
-      fontWeight: "bold",
-      borderBottom: "2px solid #0d47a1",
+      fontWeight: "600",
       color: "#2196f3"
     }
 
