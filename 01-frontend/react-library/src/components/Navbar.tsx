@@ -1,8 +1,20 @@
+import { Link, NavLink } from "react-router-dom"
+
 export default function Navbar(){
+    const activeStyle = {
+      fontWeight: "bold",
+      borderBottom: "2px solid #0d47a1",
+      color: "#2196f3"
+    }
+
     return (
         <nav className='navbar navbar-light navbar-expand-lg shadow' style={{backgroundColor: "#e3f2fd"}}>
         <div className='container-fluid'>
-          <img className='nav-logo d-inline-block px-4' src="/main-ave-logo.svg" alt="" />
+          <Link 
+            to="/"
+          >
+            <img className='nav-logo d-inline-block px-4' src="/main-ave-logo.svg" alt="" />
+          </Link>
           <button 
             className='navbar-toggler' 
             type='button' 
@@ -17,16 +29,34 @@ export default function Navbar(){
           <div className='collapse navbar-collapse' id='navbarNavDropdown'>
             <ul className='navbar-nav'>
               <li className='nav-item'>
-                <a className='nav-link active' href="#">Home</a>
+                <NavLink 
+                  className='nav-link'
+                  style={({isActive}) => isActive ? activeStyle : undefined} 
+                  to="/"
+                >
+                  Home
+                </NavLink>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href="#">Search Books</a>
+                <NavLink 
+                  className='nav-link' 
+                  style={({isActive}) => isActive ? activeStyle : undefined}
+                  to="/search"
+                >
+                  Search Books
+                </NavLink>
               </li>
             </ul>
 
             <ul className='navbar-nav ms-auto'>
               <li className='nav-item m-1'>
-                <a className='btn btn-outline-dark' type='button' href="#">Sign in</a>
+                <Link 
+                  className='btn btn-outline-dark' 
+                  type='button' 
+                  to="#"
+                >
+                  Sign in
+                </Link>
               </li>
             </ul>
           </div>
