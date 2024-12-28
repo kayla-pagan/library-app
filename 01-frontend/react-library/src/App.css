@@ -8,18 +8,24 @@
   height: auto;
 }
 
-.nav-link, .btn {
+nav .nav-link, .btn {
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link {
+nav .nav-link {
   color: #051939;
   border-bottom: 2px solid transparent;
 }
 
-.nav-link:hover, 
-.nav-link:focus-visible {
+nav .nav-link:hover, 
+nav .nav-link:focus-visible {
   border-bottom: 2px solid #0d47a1;
+  color: #2196f3 !important;
+  cursor: pointer;
+}
+
+footer .nav-link:hover, 
+footer .nav-link:focus-visible {
   color: #2196f3 !important;
   cursor: pointer;
 }

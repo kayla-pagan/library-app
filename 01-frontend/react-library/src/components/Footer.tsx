@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 export default function Footer(){
     return (
-        <div style={{ backgroundColor: "#0d47a1" }}>
+        <div style={{ backgroundColor: "#051939" }}>
             <footer 
                 className="container d-flex flex-wrap justify-content-between align-items-center py-5"
-                style={{ backgroundColor: "#0d47a1" }}
+                style={{ backgroundColor: "#051939" }}
             >
                 <p className="col-md-4 mb-0 text-white">
                     ©  Main Ave Books, Inc

@@ -6,14 +6,14 @@ import Layout from "./components/Layout";
 
 function App() {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="search" element={<SearchBooks />} />
           </Route>
         </Routes>
-    </>
+    </div>
   );
 }
 

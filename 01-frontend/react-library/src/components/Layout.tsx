@@ -6,7 +6,9 @@ export default function Layout(){
     return (
         <>
             <Navbar />
-            <Outlet />
+            <div className="flex-grow-1">
+                <Outlet />
+            </div>
             <Footer />
         </>
     )
