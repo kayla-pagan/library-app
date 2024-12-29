@@ -2,6 +2,8 @@ import React from "react"
 import BookModel from "../models/BookModels"
 import SpinnerLoading from "../utils/SpinnerLoading"
 import tiffanyBookImg from "../assets/book-tiffany-frank.svg"
+import StarReview from "../utils/StarReview"
+import CheckoutAndReviewBox from "../components/CheckoutBookPage/CheckoutAndReviewBox"
 
 export default function CheckoutBook(){
     const [book, setBook] = React.useState<BookModel>()
@@ -73,10 +75,12 @@ export default function CheckoutBook(){
                     <div className="col-4 col-md-4 container">
                         <div className="ml-2">
                             <h2>{book?.title}</h2>
-                            <h5 className="text-primary">{book?.author}</h5>
+                            <h5 style={{ color: "#2196f3" }}>{book?.author}</h5>
                             <p className="lead">{book?.description}</p>
+                            <StarReview rating={4.5} size={32} />
                         </div>
                     </div>
+                    <CheckoutAndReviewBox book={book} mobile={false} />
                 </div>
                 <hr />
             </div>
@@ -93,10 +97,12 @@ export default function CheckoutBook(){
                 <div className="mt-4">
                     <div className="ml-2">
                         <h2>{book?.title}</h2>
-                        <h5 className="text-primary">{book?.author}</h5>
+                        <h5 style={{ color: "#2196f3" }}>{book?.author}</h5>
                         <p className="lead">{book?.description}</p>
+                        <StarReview rating={4.5} size={32} />
                     </div>
                 </div>
+                <CheckoutAndReviewBox book={book} mobile={true} />
                 <hr />
             </div>
         </div>
