@@ -1,12 +1,13 @@
 import BookModel from "../../models/BookModels";
 import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
+import { Link } from "react-router-dom";
 
 interface BookProps {
   book: BookModel;
 }
 
 export default function Search({ book }: BookProps): React.ReactElement {
-  const { title, author, description, img } = book;
+  const { id, title, author, description, img } = book;
 
   return (
     <div className="card mt-3 shadow p-3 mb-3 bg-body rounded">
@@ -39,13 +40,13 @@ export default function Search({ book }: BookProps): React.ReactElement {
         </div>
 
         <div className="col-md-4 d-flex justify-content-center align-items-center">
-          <a
+          <Link
             className="btn btn-md text-white"
             style={{ backgroundColor: "#0d47a1" }}
-            href="#"
+            to={`/checkout/${id}`}
           >
             View Details
-          </a>
+          </Link>
         </div>
       </div>
     </div>
