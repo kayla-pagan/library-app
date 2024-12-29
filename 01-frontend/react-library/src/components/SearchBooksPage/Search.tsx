@@ -1,4 +1,4 @@
-import BookModel from "../../models/BookModels";
+import BookModel from "../../models/BookModel";
 import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
 import { Link } from "react-router-dom";
 

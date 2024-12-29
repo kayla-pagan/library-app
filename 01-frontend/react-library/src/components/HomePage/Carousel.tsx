@@ -1,6 +1,6 @@
 import React from "react";
 import Book from "./Book";
-import BookModel from "../../models/BookModels";
+import BookModel from "../../models/BookModel";
 import SpinnerLoading from "../../utils/SpinnerLoading";
 import { Link } from "react-router-dom";
 

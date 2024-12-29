@@ -1,5 +1,5 @@
 import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
-import BookModel from "../../models/BookModels";
+import BookModel from "../../models/BookModel";
 
 interface BookProps {
   book: BookModel
