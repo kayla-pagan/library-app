@@ -1,6 +1,7 @@
 package com.mainave.spring_boot_library.config;
 
 import com.mainave.spring_boot_library.entity.Book;
+import com.mainave.spring_boot_library.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -19,8 +20,10 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 HttpMethod.PATCH };
 
         config.exposeIdsFor(Book.class);
+        config.exposeIdsFor(Review.class);
 
         disableHttpMethods(Book.class, config, unsupportedActions);
+        disableHttpMethods(Review.class, config, unsupportedActions);
 
         // Configure CORS Mapping
         String allowedOrigins = "http://localhost:5173";
