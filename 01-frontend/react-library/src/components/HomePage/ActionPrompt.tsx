@@ -1,4 +1,9 @@
+import { Link } from "react-router-dom";
+import { useOktaAuth } from "@okta/okta-react";
+
 export default function ActionPrompt() {
+  const { authState } = useOktaAuth();
+
   return (
     <>
       <div className="d-none d-lg-block">
@@ -15,13 +20,24 @@ export default function ActionPrompt() {
                 to learn a new skill or simply unwinding, we can provide top
                 content for your jouney!
               </p>
-              <a
-                className="btn btn-lg text-white"
-                style={{ backgroundColor: "#0d47a1" }}
-                href="#"
-              >
-                Sign up
-              </a>
+              {authState?.isAuthenticated ? (
+                <Link
+                  className="btn btn-lg text-white"
+                  style={{ backgroundColor: "#0d47a1" }}
+                  type="button"
+                  to="search"
+                >
+                  Explore top books
+                </Link>
+              ) : (
+                <Link
+                  className="btn btn-lg text-white"
+                  style={{ backgroundColor: "#0d47a1" }}
+                  to="/login"
+                >
+                  Sign up
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -57,13 +73,23 @@ export default function ActionPrompt() {
                 to learn a new skill or simply unwinding, we can provide top
                 content for your jouney!
               </p>
-              <a
+              {authState?.isAuthenticated ? 
+                <Link
                 className="btn btn-lg text-white"
                 style={{ backgroundColor: "#0d47a1" }}
-                href="#"
+                to="search"
+              >
+                Explore top books
+              </Link>
+              :
+              <Link
+                className="btn btn-lg text-white"
+                style={{ backgroundColor: "#0d47a1" }}
+                to="/login"
               >
                 Sign up
-              </a>
+              </Link>
+              }
             </div>
           </div>
 

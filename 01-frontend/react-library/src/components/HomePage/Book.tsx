@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
 import BookModel from "../../models/BookModel";
 
@@ -6,7 +7,7 @@ interface BookProps {
 }
 
 export default function Book({book}: BookProps): React.ReactElement {
-    const {title, author, img} = book
+    const {id, title, author, img} = book
 
     return (
         <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3">
@@ -28,13 +29,13 @@ export default function Book({book}: BookProps): React.ReactElement {
                   }
                   <h6 className="mt-2">{title}</h6>
                   <p>{author}</p>
-                  <a
+                  <Link
                     className="btn text-white"
                     style={{ backgroundColor: "#0d47a1" }}
-                    href="#"
+                    to={`checkout/${id}`}
                   >
                     Reserve
-                  </a>
+                  </Link>
                 </div>
               </div>
     )
