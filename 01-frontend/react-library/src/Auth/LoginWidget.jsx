@@ -15,8 +15,16 @@ export default function LoginWidget({ config }){
         )
     }
 
-    return authState.isAuthenticated ? 
-    navigate("/", {replace: true})
-    :
-    <OktaSignInWidget config={config} onSuccess={onSuccess} onError={onError} />
+    if (authState.isAuthenticated) {
+        setTimeout(() => navigate("/", { replace: true }), 0);
+        return null;
+    }
+
+    return (
+        <OktaSignInWidget
+            config={config}
+            onSuccess={onSuccess}
+            onError={onError}
+        />
+    )
 }
