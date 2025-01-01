@@ -20,7 +20,7 @@ public class SecurityConfiguration {
                 auth.requestMatchers("/api/books/secure/**").authenticated().anyRequest().permitAll())
                 .oauth2ResourceServer(oauth2 ->
                         oauth2.jwt(jwt ->
-                                jwt.jwkSetUri("https://dev-18268144.okta.com/oauth2/default")));
+                                jwt.jwkSetUri("https://dev-18268144.okta.com/oauth2/default/v1/keys")));
         http.cors(cors -> cors.configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues()));
 
         http.setSharedObject(ContentNegotiationStrategy.class, new HeaderContentNegotiationStrategy());
