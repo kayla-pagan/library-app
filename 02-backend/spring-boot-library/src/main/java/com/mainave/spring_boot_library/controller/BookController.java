@@ -30,6 +30,7 @@ public class BookController {
         return bookService.checkoutBookByUser(userEmail, bookId);
     }
 
+    @CrossOrigin(origins = "http://localhost:5173", allowedHeaders = "*", allowCredentials = "true")
     @PutMapping("/secure/checkout")
     public Book checkoutBook(@RequestHeader(value = "Authorization") String token,
                              @RequestParam Long bookId) throws Exception {
