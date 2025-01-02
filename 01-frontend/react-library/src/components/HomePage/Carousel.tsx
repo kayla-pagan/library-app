@@ -23,7 +23,6 @@ export default function Carousel() {
 
         const responseJson = await response.json();
         const responseData = responseJson._embedded.books;
-        console.log(responseData);
         const loadedBooks: BookModel[] = responseData.map((book: any) => ({
           id: book.id,
           title: book.title,

@@ -14,7 +14,6 @@ export default function Navbar() {
   }
 
   const handleLogout = async () => oktaAuth.signOut();
-  console.log(authState);
 
   return (
     <nav
