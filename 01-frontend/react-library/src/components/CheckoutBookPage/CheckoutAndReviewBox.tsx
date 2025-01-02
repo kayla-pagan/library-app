@@ -1,6 +1,7 @@
 import React from "react";
 import BookModel from "../../models/BookModel";
 import { Link } from "react-router-dom";
+import LeaveAReview from "../../utils/LeaveAReview";
 
 interface checkoutandReviewBoxProps {
     book: BookModel | undefined;
@@ -45,7 +46,7 @@ export default function CheckoutAndReviewBox({
 
     function reviewRender(){
         if(isAuthenticated && !isReviewLeft){
-            return (<p>Leave a review component here.</p>)
+            return (<LeaveAReview />)
         } else if(isAuthenticated && isReviewLeft){
             return (<p>Thank you for your review!</p>)
         }
