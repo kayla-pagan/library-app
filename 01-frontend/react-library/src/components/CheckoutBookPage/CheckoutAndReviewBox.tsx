@@ -11,10 +11,12 @@ interface checkoutandReviewBoxProps {
     isCheckedOut: boolean;
     checkoutBook: any;
     isReviewLeft: boolean;
+    submitReview: any;
   }
 
 export default function CheckoutAndReviewBox({
-    book, mobile, currentLoans, isAuthenticated, isCheckedOut, checkoutBook, isReviewLeft}: checkoutandReviewBoxProps): React.ReactElement{
+    book, mobile, currentLoans, isAuthenticated, isCheckedOut, 
+    checkoutBook, isReviewLeft, submitReview}: checkoutandReviewBoxProps): React.ReactElement{
     function buttonRender(){
       if(isAuthenticated){
         if(!isCheckedOut && currentLoans < 5){
@@ -46,7 +48,7 @@ export default function CheckoutAndReviewBox({
 
     function reviewRender(){
         if(isAuthenticated && !isReviewLeft){
-            return (<LeaveAReview />)
+            return (<LeaveAReview submitReview={submitReview} />)
         } else if(isAuthenticated && isReviewLeft){
             return (<p>Thank you for your review!</p>)
         }

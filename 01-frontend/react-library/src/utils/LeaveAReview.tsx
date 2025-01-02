@@ -1,11 +1,11 @@
 import React from "react"
 import StarReview from "./StarReview"
 
-// interface leaveAReviewProps {
+interface leaveAReviewProps {
+    submitReview: any;
+}
 
-// }
-
-export default function LeaveAReview(){
+export default function LeaveAReview({submitReview}: leaveAReviewProps): React.ReactElement{
     const [starInput, setStarInput] = React.useState(0)
     const [displayInput, setDisplayInput] = React.useState(false)
     const [reviewDescription, setReviewDescription] = React.useState("")
@@ -70,7 +70,14 @@ export default function LeaveAReview(){
                         </textarea>
                     </div>
                     <div>
-                        <button className="btn mt-3 text-white" type="button" style={{backgroundColor: "#0d47a1"}}>Submit Review</button>
+                        <button 
+                            className="btn mt-3 text-white" 
+                            type="button" 
+                            style={{backgroundColor: "#0d47a1"}}
+                            onClick={() => submitReview(starInput, reviewDescription)}
+                        >
+                            Submit Review
+                        </button>
                     </div>
                 </form>
             }
