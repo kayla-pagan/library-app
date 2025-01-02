@@ -44,6 +44,7 @@ public class SecurityConfiguration {
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/api/books/secure/**", config);
+        source.registerCorsConfiguration("/api/reviews/secure/**", config);
         return source;
     }
 }
