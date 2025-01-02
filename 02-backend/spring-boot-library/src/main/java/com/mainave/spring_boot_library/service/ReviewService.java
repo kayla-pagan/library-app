@@ -1,6 +1,5 @@
 package com.mainave.spring_boot_library.service;
 
-import com.mainave.spring_boot_library.dao.BookRepository;
 import com.mainave.spring_boot_library.dao.ReviewRepository;
 import com.mainave.spring_boot_library.entity.Review;
 import com.mainave.spring_boot_library.requestmodels.ReviewRequest;
@@ -14,13 +13,10 @@ import java.time.LocalDate;
 @Service
 @Transactional
 public class ReviewService {
-    private final BookRepository bookRepository;
-
     private final ReviewRepository reviewRepository;
 
     @Autowired
-    public ReviewService(BookRepository bookRepository, ReviewRepository reviewRepository) {
-        this.bookRepository = bookRepository;
+    public ReviewService(ReviewRepository reviewRepository) {
         this.reviewRepository = reviewRepository;
     }
 
@@ -41,5 +37,10 @@ public class ReviewService {
         }
         review.setDate(Date.valueOf(LocalDate.now()));
         reviewRepository.save(review);
+    }
+
+    public boolean userReviewListed(String userEmail, Long bookId) {
+        Review validateReview = reviewRepository.findByUserEmailAndBookId(userEmail, bookId);
+        return validateReview != null;
     }
 }
