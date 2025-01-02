@@ -65,7 +65,7 @@ export default function Navbar() {
           <ul className="navbar-nav ms-auto">
             {!authState.isAuthenticated ? (
               <li className="nav-item m-1">
-                <Link className="btn btn-outline-dark" type="button" to="#">
+                <Link className="btn btn-outline-dark" type="button" to="/login">
                   Sign in
                 </Link>
               </li>

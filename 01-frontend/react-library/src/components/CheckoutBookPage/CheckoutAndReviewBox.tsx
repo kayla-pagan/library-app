@@ -8,13 +8,22 @@ interface checkoutandReviewBoxProps {
     currentLoans: number;
     isAuthenticated: any;
     isCheckedOut: boolean;
+    checkoutBook: any;
   }
 
-export default function CheckoutAndReviewBox({book, mobile, currentLoans, isAuthenticated, isCheckedOut}: checkoutandReviewBoxProps): React.ReactElement{
+export default function CheckoutAndReviewBox({
+    book, mobile, currentLoans, isAuthenticated, isCheckedOut, checkoutBook}: checkoutandReviewBoxProps): React.ReactElement{
     function buttonRender(){
       if(isAuthenticated){
         if(!isCheckedOut && currentLoans < 5){
-            return (<button className="btn btn-lg" style={{backgroundColor: "#00ba88", color: "#ffffff"}}>Checkout</button>)
+            return (
+                <button 
+                    className="btn btn-lg" 
+                    style={{backgroundColor: "#00ba88", color: "#ffffff"}} 
+                    onClick={() => checkoutBook()}
+                >
+                    Checkout
+                </button>)
         } else if(isCheckedOut){
             return (<p className="fw-semibold">Book checked out. Enjoy!</p>)
         } else if(!isCheckedOut){

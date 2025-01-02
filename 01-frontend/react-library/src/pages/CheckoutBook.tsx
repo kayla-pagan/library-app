@@ -22,8 +22,7 @@ export default function CheckoutBook() {
 
   // loans count state
   const [currentLons, setCurrentLoans] = React.useState(0);
-  const [isLoadingCurrentLoans, setIsLoadingCurrentLoans] =
-    React.useState(false);
+  const [isLoadingCurrentLoans, setIsLoadingCurrentLoans] = React.useState(false);
 
   // is book checked out
   const [isCheckedOut, setIsCheckedOut] = React.useState(false);
@@ -65,7 +64,7 @@ export default function CheckoutBook() {
     }
 
     fetchBooks();
-  }, []);
+  }, [isCheckedOut]);
 
   React.useEffect(() => {
     async function fetchBookReviews() {
@@ -144,7 +143,7 @@ export default function CheckoutBook() {
     }
 
     fetchCurrentLoans();
-  }, [authState]);
+  }, [authState, isCheckedOut]);
 
   React.useEffect(() => {
     async function fetchIsBookCheckedOut() {
@@ -194,6 +193,29 @@ export default function CheckoutBook() {
     );
   }
 
+  async function checkoutBook() {
+    const checkoutUrl = `http://localhost:8080/api/books/secure/checkout?bookId=${book?.id}`
+    const requestOptions = {
+        method: 'PUT', 
+        headers: {
+            Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+            "Content-Type": "application/json",
+        }
+    }
+    try {
+        const checkoutResponse = await fetch(checkoutUrl, requestOptions);
+        if (!checkoutResponse.ok) {
+            const errorBody = await checkoutResponse.text();
+            console.error("Error Response Body:", errorBody);
+            throw new Error("Something went wrong!");
+        }
+        console.log("Checkout successful:", await checkoutResponse.json());
+        setIsCheckedOut(true);
+    } catch (error: any) {
+        console.error("Checkout Error:", error.message);
+    }
+  }
+
   return (
     <div>
       <div className="container d-none d-lg-block">
@@ -219,6 +241,7 @@ export default function CheckoutBook() {
             currentLoans={currentLons}
             isAuthenticated={authState?.isAuthenticated}
             isCheckedOut={isCheckedOut}
+            checkoutBook={checkoutBook}
           />
         </div>
         <hr />
@@ -248,6 +271,7 @@ export default function CheckoutBook() {
           currentLoans={currentLons}
           isAuthenticated={authState?.isAuthenticated}
           isCheckedOut={isCheckedOut}
+          checkoutBook={checkoutBook}
         />
         <hr />
         <LatestReviews reviews={reviews} bookId={book?.id} mobile={true} />
