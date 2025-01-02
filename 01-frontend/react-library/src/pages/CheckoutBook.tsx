@@ -143,6 +143,8 @@ export default function CheckoutBook() {
             setIsLoadingUserReview(false)
         }
     }
+
+    fetchUserReview()
   }, [authState])
 
   React.useEffect(() => {
@@ -270,6 +272,7 @@ export default function CheckoutBook() {
             isAuthenticated={authState?.isAuthenticated}
             isCheckedOut={isCheckedOut}
             checkoutBook={checkoutBook}
+            isReviewLeft={isReviewLeft}
           />
         </div>
         <hr />
@@ -300,6 +303,7 @@ export default function CheckoutBook() {
           isAuthenticated={authState?.isAuthenticated}
           isCheckedOut={isCheckedOut}
           checkoutBook={checkoutBook}
+          isReviewLeft={isReviewLeft}
         />
         <hr />
         <LatestReviews reviews={reviews} bookId={book?.id} mobile={true} />

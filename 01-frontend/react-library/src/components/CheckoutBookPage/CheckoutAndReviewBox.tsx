@@ -9,10 +9,11 @@ interface checkoutandReviewBoxProps {
     isAuthenticated: any;
     isCheckedOut: boolean;
     checkoutBook: any;
+    isReviewLeft: boolean;
   }
 
 export default function CheckoutAndReviewBox({
-    book, mobile, currentLoans, isAuthenticated, isCheckedOut, checkoutBook}: checkoutandReviewBoxProps): React.ReactElement{
+    book, mobile, currentLoans, isAuthenticated, isCheckedOut, checkoutBook, isReviewLeft}: checkoutandReviewBoxProps): React.ReactElement{
     function buttonRender(){
       if(isAuthenticated){
         if(!isCheckedOut && currentLoans < 5){
@@ -30,6 +31,7 @@ export default function CheckoutAndReviewBox({
             return (<p style={{color: "#f44336"}}>Too many books checked out.</p>)
         }
       }
+      
       return (
         <Link 
             className="btn btn-lg"
@@ -39,6 +41,20 @@ export default function CheckoutAndReviewBox({
             Sign in
         </Link>
       )
+    }
+
+    function reviewRender(){
+        if(isAuthenticated && !isReviewLeft){
+            return (<p>Leave a review component here.</p>)
+        } else if(isAuthenticated && isReviewLeft){
+            return (<p>Thank you for your review!</p>)
+        }
+        return (
+            <div>
+                <hr />
+                <p>Sign in to leave a review.</p>
+            </div>
+        )
     }
     
     return (
@@ -71,9 +87,7 @@ export default function CheckoutAndReviewBox({
                 <p className="mt-3">
                     This number can change until you have completed your order.
                 </p>
-                <p>
-                    Sign in to leave a review.
-                </p>
+                {reviewRender()}
             </div>
         </div>
     )
