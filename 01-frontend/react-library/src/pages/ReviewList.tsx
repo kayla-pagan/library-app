@@ -81,7 +81,7 @@ export default function ReviewList(){
     return (
         <div className="container m-5">
             <div>
-                <h3>Comments: ({reviews.length})</h3>
+                <h4>Comments: ({reviews.length})</h4>
             </div>
             <p>{indexOfFirstReview + 1}-{lastItem} of {totalAmountOfReviews} items:</p>
             <div className="row">
