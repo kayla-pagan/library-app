@@ -26,7 +26,7 @@ export default function LatestReviews({reviews, bookId, mobile}: latestReviewsPr
                             className="btn btn-md text-white" 
                             style={{ backgroundColor: "#0d47a1" }}
                             type="button"
-                            to="#"
+                            to={`/reviewlist/${bookId}`}
                         >
                             Reach all reviews
                         </Link>
