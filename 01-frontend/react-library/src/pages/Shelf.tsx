@@ -1,6 +1,10 @@
+import React from "react";
 import Loans from "../components/ShelfCurrentLoansPage/Loans";
+import History from "./History";
 
 export default function Shelf(){
+    const [historyClicked, setHistoryClicked] = React.useState(false)
+
     return (
         <div className="container">
             <div className="mt-3">
@@ -15,6 +19,7 @@ export default function Shelf(){
                             role="tab"
                             aria-controls="nav-loans"
                             aria-selected="true"
+                            onClick={() => setHistoryClicked(false)}
                         >
                             Loans
                         </button>
@@ -27,6 +32,7 @@ export default function Shelf(){
                             role="tab"
                             aria-controls="nav-history"
                             aria-selected="false"
+                            onClick={() => setHistoryClicked(true)}
                         >
                             Your History
                         </button>
@@ -37,7 +43,7 @@ export default function Shelf(){
                         <Loans />
                     </div>
                     <div className="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
-                        <p>Checkout History</p>
+                        {historyClicked ? <History /> : <></>}
                     </div>
                 </div>
             </div>
