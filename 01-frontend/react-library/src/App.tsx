@@ -6,9 +6,10 @@ import Layout from "./components/Layout";
 import CheckoutBook from "./pages/CheckoutBook";
 import { oktaConfig } from "./lib/oktaConfig";
 import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
-import { LoginCallback, Security } from "@okta/okta-react";
+import { LoginCallback, Security, useOktaAuth } from "@okta/okta-react";
 import LoginWidget from "./Auth/LoginWidget";
 import ReviewList from "./pages/ReviewList";
+import Shelf from "./pages/Shelf";
 
 const oktaAuth = new OktaAuth(oktaConfig)
 
@@ -21,6 +22,16 @@ function App() {
     navigate(relativeUrl, { replace: true })
   }
 
+  function ProtectedRoute({ children }: any){
+    const { authState } = useOktaAuth()
+    
+    if(!authState?.isAuthenticated){
+      navigate("/login")
+      return null
+    }
+
+    return children
+  }
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -33,6 +44,10 @@ function App() {
             <Route path="/checkout/:bookId" element={<CheckoutBook />} />
             <Route path="/login" element={<LoginWidget config={oktaConfig} />} />
             <Route path="/login/callback" element={<LoginCallback />} />
+            <Route path="/shelf" element={
+              <ProtectedRoute>
+                <Shelf />
+              </ProtectedRoute>} />
           </Route>
         </Routes>
       </Security>

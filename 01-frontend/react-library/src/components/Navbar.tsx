@@ -13,6 +13,8 @@ export default function Navbar() {
     return <SpinnerLoading />;
   }
 
+  console.log(authState)
+
   const handleLogout = async () => oktaAuth.signOut();
 
   return (
@@ -59,6 +61,17 @@ export default function Navbar() {
                 Search Books
               </NavLink>
             </li>
+            {authState?.isAuthenticated && 
+              <li className="nav-item">
+                <NavLink 
+                  className="nav-link" 
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  to="/shelf"
+                >
+                  Shelf
+                </NavLink>
+              </li>
+            }
           </ul>
 
           <ul className="navbar-nav ms-auto">
