@@ -1,6 +1,7 @@
 package com.mainave.spring_boot_library.config;
 
 import com.mainave.spring_boot_library.entity.Book;
+import com.mainave.spring_boot_library.entity.History;
 import com.mainave.spring_boot_library.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
