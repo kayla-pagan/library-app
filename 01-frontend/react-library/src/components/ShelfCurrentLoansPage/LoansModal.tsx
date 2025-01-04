@@ -5,9 +5,11 @@ import tiffanyBookImg from "../../assets/book-tiffany-frank.svg";
 interface loansModalProps {
     shelfCurrentLoan: ShelfCurrentLoans;
     mobile: boolean;
+    returnBook: any;
+    renewLoan: any;
 }
 
-export default function LoansModal({ shelfCurrentLoan, mobile }: loansModalProps): React.ReactElement{
+export default function LoansModal({ shelfCurrentLoan, mobile, returnBook, renewLoan }: loansModalProps): React.ReactElement{
     return (
         <div 
             className="modal fade" 
@@ -15,7 +17,7 @@ export default function LoansModal({ shelfCurrentLoan, mobile }: loansModalProps
             data-bs-backdrop="static"
             data-bs-keyboard="false"
             aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
+            tabIndex={-1}
             key={shelfCurrentLoan.book.id}
         >
             <div className="modal-dialog">
@@ -64,6 +66,7 @@ export default function LoansModal({ shelfCurrentLoan, mobile }: loansModalProps
                                         className="list-group-item list-group-item-action" 
                                         data-bs-dismiss="modal" 
                                         aria-current="true"
+                                        onClick={() => returnBook(shelfCurrentLoan.book.id)}
                                     >
                                         Return Book
                                     </button>
@@ -76,6 +79,12 @@ export default function LoansModal({ shelfCurrentLoan, mobile }: loansModalProps
                                         } 
                                         data-bs-dismiss="modal" 
                                         aria-current="true"
+                                        onClick={
+                                            shelfCurrentLoan.daysLeft < 0 ? 
+                                            (event) => event.preventDefault()
+                                            :
+                                            () => renewLoan(shelfCurrentLoan.book.id)
+                                        }
                                     >
                                         {shelfCurrentLoan.daysLeft < 0 ? 
                                             "Late dues canot be renewed" 

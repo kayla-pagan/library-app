@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import SearchBooks from "./pages/SearchBooks";
 import Layout from "./components/Layout";
@@ -10,7 +10,7 @@ import { LoginCallback, Security, useOktaAuth } from "@okta/okta-react";
 import LoginWidget from "./Auth/LoginWidget";
 import ReviewList from "./pages/ReviewList";
 import Shelf from "./pages/Shelf";
-import React from "react";
+import SpinnerLoading from "./utils/SpinnerLoading";
 
 const oktaAuth = new OktaAuth(oktaConfig)
 
@@ -25,15 +25,10 @@ function App() {
 
   function ProtectedRoute({ children }: any){
     const { authState } = useOktaAuth()
-    const protectedNavigate = useNavigate()
-    
-    React.useEffect(() => {
-      if(!authState?.isAuthenticated){
-        navigate("/login")
-      }
-    },[authState, protectedNavigate])
 
-    if(!authState?.isAuthenticated){ return null }
+    if(authState === undefined || authState === null) { return <SpinnerLoading /> }
+    
+    return authState?.isAuthenticated ? (<>{children}</>) : (<Navigate to="/login" replace />)
 
     return <>{children}</>
   }

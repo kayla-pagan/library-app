@@ -11,10 +11,9 @@ export default function Loans() {
   const [httpError, setHttpError] = React.useState(null);
 
   // current loans state
-  const [shelfCurrentLoans, setShelfCurrentLoans] = React.useState<
-    ShelfCurrentLoans[]
-  >([]);
+  const [shelfCurrentLoans, setShelfCurrentLoans] = React.useState<ShelfCurrentLoans[]>([]);
   const [isLoadingUserLoans, setIsLoadingUserLoans] = React.useState(false);
+  const [checkout, setCheckout] = React.useState(false)
 
   React.useEffect(() => {
     async function fetchUserCurrentLoans() {
@@ -25,7 +24,7 @@ export default function Loans() {
           const requestOptions = {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${authState.accessToken?.accessToken}`,
+              Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
               "Content-Type": "application/json",
             },
           };
@@ -50,7 +49,7 @@ export default function Loans() {
     }
     fetchUserCurrentLoans();
     window.scrollTo(0, 0);
-  }, [authState]);
+  }, [authState, checkout]);
 
   if (isLoadingUserLoans) {
     return <SpinnerLoading />;
@@ -62,6 +61,40 @@ export default function Loans() {
         <p>{httpError}</p>
       </div>
     );
+  }
+
+  async function returnBook(bookId: number) {
+    const returnBookUrl = `http://localhost:8080/api/books/secure/return?bookId=${bookId}`
+    const requestOptions = {
+        method: "PUT",
+            headers: {
+                Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                "Content-Type": "application/json",
+            },
+    }
+    const requestBookResponse = await fetch(returnBookUrl, requestOptions)
+    if(!requestBookResponse.ok){
+        throw new Error("Something went wrong!")
+    }
+
+    setCheckout(!checkout)
+  }
+
+  async function renewLoan(bookId: number) {
+    const renewLoanUrl = `http://localhost:8080/api/books/secure/renew/loan?bookId=${bookId}`
+    const requestOptions = {
+        method: "PUT",
+            headers: {
+                Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                "Content-Type": "application/json",
+            },
+    }
+    const renewLoanResponse = await fetch(renewLoanUrl, requestOptions)
+    if(!renewLoanResponse.ok){
+        throw new Error("Something went wrong!")
+    }
+
+    setCheckout(!checkout)
   }
 
   return (
@@ -140,7 +173,7 @@ export default function Loans() {
                   </div>
                 </div>
                 <hr />
-                <LoansModal shelfCurrentLoan={shelfCurrentLoan} mobile={false} />
+                <LoansModal shelfCurrentLoan={shelfCurrentLoan} mobile={false} returnBook={returnBook} renewLoan={renewLoan} />
               </div>
             ))}
           </>
@@ -230,7 +263,7 @@ export default function Loans() {
                     </div>
                   </div>
                 <hr />
-                <LoansModal shelfCurrentLoan={shelfCurrentLoan} mobile={true} />
+                <LoansModal shelfCurrentLoan={shelfCurrentLoan} mobile={true} returnBook={returnBook} renewLoan={renewLoan} />
               </div>
             ))}
           </>
