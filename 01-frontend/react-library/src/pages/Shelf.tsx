@@ -1,3 +1,5 @@
+import Loans from "../components/ShelfCurrentLoansPage/Loans";
+
 export default function Shelf(){
     return (
         <div className="container">
@@ -32,7 +34,7 @@ export default function Shelf(){
                 </nav>
                 <div className="tab-content" id="nav-tabContent">
                     <div className="tab-pane fade show active" id="nav-loans" role="tab-panel" aria-labelledby="nav-loans-tab">
-                        <p>Loans</p>
+                        <Loans />
                     </div>
                     <div className="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
                         <p>Checkout History</p>

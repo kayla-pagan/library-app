@@ -10,6 +10,7 @@ import { LoginCallback, Security, useOktaAuth } from "@okta/okta-react";
 import LoginWidget from "./Auth/LoginWidget";
 import ReviewList from "./pages/ReviewList";
 import Shelf from "./pages/Shelf";
+import React from "react";
 
 const oktaAuth = new OktaAuth(oktaConfig)
 
@@ -24,13 +25,17 @@ function App() {
 
   function ProtectedRoute({ children }: any){
     const { authState } = useOktaAuth()
+    const protectedNavigate = useNavigate()
     
-    if(!authState?.isAuthenticated){
-      navigate("/login")
-      return null
-    }
+    React.useEffect(() => {
+      if(!authState?.isAuthenticated){
+        navigate("/login")
+      }
+    },[authState, protectedNavigate])
 
-    return children
+    if(!authState?.isAuthenticated){ return null }
+
+    return <>{children}</>
   }
 
   return (
