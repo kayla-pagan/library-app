@@ -96,11 +96,28 @@ public class BookService {
         Checkout validateCheckout = checkoutRepository.findByUserEmailAndBookId(userEmail, bookId);
 
         if(!book.isPresent() || validateCheckout == null){
-            throw new Exception("Book doesn't exist or is not checked out");
+            throw new Exception("Book does not exist or is not checked out");
         }
 
         book.get().setCopiesAvailable(book.get().getCopiesAvailable() + 1);
         bookRepository.save(book.get());
         checkoutRepository.deleteById(validateCheckout.getId());
+    }
+
+    public void renewLoan(String userEmail, Long bookId) throws Exception {
+        Checkout validateCheckout = checkoutRepository.findByUserEmailAndBookId(userEmail, bookId);
+
+        if(validateCheckout == null){
+            throw new Exception("Book does not exist or is not checked out");
+        }
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = sdf.parse(validateCheckout.getReturnDate());
+        Date date2 = sdf.parse(LocalDate.now().toString());
+
+        if(date1.compareTo(date2) > 0 || date1.compareTo(date2) == 0) {
+            validateCheckout.setReturnDate(LocalDate.now().plusDays(7).toString());
+            checkoutRepository.save(validateCheckout);
+        }
     }
 }
