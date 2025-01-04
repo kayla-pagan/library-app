@@ -2,8 +2,10 @@ package com.mainave.spring_boot_library.service;
 
 import com.mainave.spring_boot_library.dao.BookRepository;
 import com.mainave.spring_boot_library.dao.CheckoutRepository;
+import com.mainave.spring_boot_library.dao.HistoryRepository;
 import com.mainave.spring_boot_library.entity.Book;
 import com.mainave.spring_boot_library.entity.Checkout;
+import com.mainave.spring_boot_library.entity.History;
 import com.mainave.spring_boot_library.responsemodels.ShelfCurrentLoansResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,10 +23,13 @@ import java.util.concurrent.TimeUnit;
 public class BookService {
     private final BookRepository bookRepository;
     private final CheckoutRepository checkoutRepository;
+    private HistoryRepository historyRepository;
 
-    public BookService(BookRepository bookRepository, CheckoutRepository checkoutRepository) {
+    public BookService(
+            BookRepository bookRepository, CheckoutRepository checkoutRepository, HistoryRepository historyRepository) {
         this.bookRepository = bookRepository;
         this.checkoutRepository = checkoutRepository;
+        this.historyRepository = historyRepository;
     }
 
     public Book checkoutBook(String userEmail, Long bookId) throws Exception {
@@ -102,6 +107,17 @@ public class BookService {
         book.get().setCopiesAvailable(book.get().getCopiesAvailable() + 1);
         bookRepository.save(book.get());
         checkoutRepository.deleteById(validateCheckout.getId());
+
+        History history = new History(
+                userEmail,
+                validateCheckout.getCheckoutDate(),
+                LocalDate.now().toString(),
+                book.get().getTitle(),
+                book.get().getAuthor(),
+                book.get().getDescription(),
+                book.get().getImg()
+        );
+        historyRepository.save(history);
     }
 
     public void renewLoan(String userEmail, Long bookId) throws Exception {
