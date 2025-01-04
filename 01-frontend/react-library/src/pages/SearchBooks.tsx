@@ -55,6 +55,7 @@ export default function SearchBooks() {
         setBooks(loadedBooks);
       } catch (error: any) {
         setHttpError(error.message);
+        setIsLoading(false);
       } finally {
         setIsLoading(false);
       }

@@ -62,6 +62,7 @@ export default function CheckoutBook() {
         setBook(loadedBook);
       } catch (error: any) {
         setHttpError(error.message);
+        setIsLoadingBook(false);
       } finally {
         setIsLoadingBook(false);
       }
@@ -110,6 +111,7 @@ export default function CheckoutBook() {
         }
       } catch (error: any) {
         setHttpError(error.message);
+        setIsLoadingReview(false);
       } finally {
         setIsLoadingReview(false);
       }
@@ -140,6 +142,7 @@ export default function CheckoutBook() {
             }
         } catch (error: any) {
             setHttpError(error)
+            setIsLoadingUserReview(false)
         } finally {
             setIsLoadingUserReview(false)
         }
@@ -171,6 +174,7 @@ export default function CheckoutBook() {
         }
       } catch (error: any) {
         setHttpError(error.message);
+        setIsLoadingCurrentLoans(false);
       } finally {
         setIsLoadingCurrentLoans(false);
       }
@@ -202,6 +206,7 @@ export default function CheckoutBook() {
         }
       } catch (error: any) {
         setHttpError(error);
+        setIsLoadingBookCheckedOut(false);
       } finally {
         setIsLoadingBookCheckedOut(false);
       }

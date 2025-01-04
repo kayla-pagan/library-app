@@ -51,6 +51,7 @@ export default function ReviewList(){
             setReviews(loadedReviews);
           } catch (error: any) {
             setHttpError(error.message);
+            setIsLoading(false);
           } finally {
             setIsLoading(false);
           }

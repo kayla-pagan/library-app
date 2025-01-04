@@ -36,6 +36,7 @@ export default function Carousel() {
         setBooks(loadedBooks);
       } catch (error: any) {
         setHttpError(error.message);
+        setIsLoading(false);
       } finally {
         setIsLoading(false);
       }
