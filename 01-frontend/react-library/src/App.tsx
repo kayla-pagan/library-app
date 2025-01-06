@@ -11,6 +11,7 @@ import LoginWidget from "./Auth/LoginWidget";
 import ReviewList from "./pages/ReviewList";
 import Shelf from "./pages/Shelf";
 import SpinnerLoading from "./utils/SpinnerLoading";
+import Message from "./pages/Message";
 
 const oktaAuth = new OktaAuth(oktaConfig)
 
@@ -48,6 +49,10 @@ function App() {
               <ProtectedRoute>
                 <Shelf />
               </ProtectedRoute>} />
+              <Route path="/messages" element={
+                <ProtectedRoute>
+                  <Message />
+                </ProtectedRoute>} />
           </Route>
         </Routes>
       </Security>
