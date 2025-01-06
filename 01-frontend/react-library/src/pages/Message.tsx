@@ -1,4 +1,5 @@
 import React from "react";
+import PostNewMessage from "../components/MessagePage/PostNewMessage";
 
 export default function Message(){
     const [messagesClick, setMessagesClick] = React.useState(false)
@@ -43,7 +44,7 @@ export default function Message(){
                         role="tabpanel" 
                         aria-labelledby="nav-send-message-tab"
                     >
-                        <p>Post new message</p>
+                        <PostNewMessage />
                     </div>
                     <div 
                         className="tab-pane fade" 
