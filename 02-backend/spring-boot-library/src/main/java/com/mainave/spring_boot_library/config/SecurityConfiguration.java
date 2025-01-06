@@ -21,7 +21,10 @@ public class SecurityConfiguration {
         http.csrf(csrf -> csrf.disable());
 
         http.authorizeHttpRequests(auth ->
-                auth.requestMatchers("/api/books/secure/**", "/api/reviews/secure/**", "/api/histories/**").authenticated().anyRequest().permitAll())
+                auth.requestMatchers("/api/books/secure/**",
+                        "/api/reviews/secure/**",
+                        "/api/histories/**",
+                        "/api/messages/secure/**").authenticated().anyRequest().permitAll())
                 .oauth2ResourceServer(oauth2 ->
                         oauth2.jwt(jwt ->
                                 jwt.jwkSetUri("https://dev-18268144.okta.com/oauth2/default/v1/keys")));
@@ -46,6 +49,7 @@ public class SecurityConfiguration {
         source.registerCorsConfiguration("/api/books/secure/**", config);
         source.registerCorsConfiguration("/api/reviews/secure/**", config);
         source.registerCorsConfiguration("/api/histories/**", config);
+        source.registerCorsConfiguration("/api/messages/secure/**", config);
         return source;
     }
 }
