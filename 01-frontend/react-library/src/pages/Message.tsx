@@ -1,5 +1,6 @@
 import React from "react";
 import PostNewMessage from "../components/MessagePage/PostNewMessage";
+import Messages from "../components/MessagePage/Messages";
 
 export default function Message(){
     const [messagesClick, setMessagesClick] = React.useState(false)
@@ -52,7 +53,7 @@ export default function Message(){
                         role="tabpanel" 
                         aria-labelledby="nav-message-tab"
                     >
-                        {messagesClick ? <p>Messages</p> : <></>}
+                        {messagesClick ? <Messages /> : <></>}
                     </div>
                 </div>
             </div>

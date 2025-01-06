@@ -20,7 +20,7 @@ export default function AssistancePrompt() {
               <Link
                 className="btn btn-lg text-white px-4 me-md-2 fw-bold"
                 style={{ backgroundColor: "#0d47a1" }}
-                to="#"
+                to="/messages"
               >
                 Contact us
               </Link>
