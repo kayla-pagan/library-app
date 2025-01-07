@@ -12,6 +12,7 @@ import ReviewList from "./pages/ReviewList";
 import Shelf from "./pages/Shelf";
 import SpinnerLoading from "./utils/SpinnerLoading";
 import Message from "./pages/Message";
+import ManageLibrary from "./pages/ManageLibrary";
 
 const oktaAuth = new OktaAuth(oktaConfig)
 
@@ -30,8 +31,6 @@ function App() {
     if(authState === undefined || authState === null) { return <SpinnerLoading /> }
     
     return authState?.isAuthenticated ? (<>{children}</>) : (<Navigate to="/login" replace />)
-
-    return <>{children}</>
   }
 
   return (
@@ -52,6 +51,10 @@ function App() {
               <Route path="/messages" element={
                 <ProtectedRoute>
                   <Message />
+                </ProtectedRoute>} />
+                <Route path="/admin" element={
+                <ProtectedRoute>
+                  <ManageLibrary />
                 </ProtectedRoute>} />
           </Route>
         </Routes>
