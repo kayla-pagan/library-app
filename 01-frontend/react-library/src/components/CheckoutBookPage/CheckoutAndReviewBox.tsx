@@ -22,8 +22,8 @@ export default function CheckoutAndReviewBox({
         if(!isCheckedOut && currentLoans < 5){
             return (
                 <button 
-                    className="btn btn-lg" 
-                    style={{backgroundColor: "#00ba88", color: "#ffffff"}} 
+                    className="btn btn-lg text-white" 
+                    style={{backgroundColor: "#00ba88"}} 
                     onClick={() => checkoutBook()}
                 >
                     Checkout
