@@ -1,10 +1,30 @@
 import { useOktaAuth } from "@okta/okta-react"
 import React from "react"
+import { Navigate } from "react-router-dom"
 
 export default function ManageLibrary(){
     const { authState } = useOktaAuth()
     const [changeQuantityOfBooksClicked, setChangeQuantityOfBooksClicked] = React.useState(false)
     const [messagesClicked, setMessagesClicked] = React.useState(false)
+
+    function addBookClick(){
+        setChangeQuantityOfBooksClicked(false)
+        setMessagesClicked(false)
+    }
+
+    function addChangeQuantityClick(){
+        setChangeQuantityOfBooksClicked(true)
+        setMessagesClicked(false)
+    }
+
+    function addMessageClick(){
+        setChangeQuantityOfBooksClicked(false)
+        setMessagesClicked(true)
+    }
+
+    if(authState?.accessToken?.claims.userType === undefined){
+        return <Navigate to={"/"} replace />
+    }
     
     return (
         <div className="container">
@@ -21,6 +41,7 @@ export default function ManageLibrary(){
                             role="tab"
                             aria-controls="nav-add-book"
                             aria-selected="false"
+                            onClick={addBookClick}
                         >
                             Add new book
                         </button>
@@ -33,6 +54,7 @@ export default function ManageLibrary(){
                             role="tab"
                             aria-controls="nav-quantity"
                             aria-selected="true"
+                            onClick={addChangeQuantityClick}
                         >
                             Change quantity
                         </button>
@@ -45,6 +67,7 @@ export default function ManageLibrary(){
                             role="tab"
                             aria-controls="nav-messages"
                             aria-selected="false"
+                            onClick={addMessageClick}
                         >
                             Messages
                         </button>
@@ -65,7 +88,7 @@ export default function ManageLibrary(){
                         role="tabpanel" 
                         aria-labelledby="nav-quantity-tab"
                     >
-                        Change Quantity
+                        {changeQuantityOfBooksClicked ? <>Change Quantity</> : <></>}
                     </div>
                     <div 
                         className="tab-pane fade" 
@@ -73,7 +96,7 @@ export default function ManageLibrary(){
                         role="tabpanel" 
                         aria-labelledby="nav-messages-tab"
                     >
-                        Admin Messages
+                        {messagesClicked ? <>Admin Messages</> : <></>}
                     </div>
                 </div>
             </div>
