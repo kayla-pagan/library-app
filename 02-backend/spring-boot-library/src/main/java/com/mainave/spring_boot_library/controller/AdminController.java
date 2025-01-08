@@ -6,6 +6,8 @@ import com.mainave.spring_boot_library.utils.ExtractJWT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @CrossOrigin("http://localhost:5173")
 @RestController
 @RequestMapping("/api/admin")
@@ -25,5 +27,13 @@ public class AdminController {
             throw new Exception("Administration page only.");
         }
         adminService.postBook(addBookRequest);
+    }
+
+    @PostMapping("/secure/upload-url")
+    public Map<String, String> getUploadUrl(@RequestBody Map<String, String> payload) throws Exception {
+        String fileName = payload.get("fileName");
+        String fileType = payload.get("fileType");
+        String url = adminService.generatePresignedUrl(fileName, fileType);
+        return Map.of("url", url);
     }
 }
