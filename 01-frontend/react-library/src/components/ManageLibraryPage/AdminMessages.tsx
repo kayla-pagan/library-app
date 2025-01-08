@@ -4,6 +4,7 @@ import { MessageModel } from "../../models/MessageModel";
 import SpinnerLoading from "../../utils/SpinnerLoading";
 import Pagination from "../../utils/Pagination";
 import PendingAdminMessage from "./PendingAdminMessage";
+import AdminMessageRequest from "../../models/AdminMessageRequest";
 
 export default function AdminMessages(){
     const { authState } = useOktaAuth()
@@ -19,6 +20,9 @@ export default function AdminMessages(){
     // pagination
     const [currentPage, setCurrentPage] = React.useState(1)
     const [totalPages, setTotalPages] = React.useState(0)
+
+    // recall useEffect
+    const [btnSubmit, setBtnSubmit] = React.useState(false)
 
     React.useEffect(() => {
         async function fetchMessages(){
@@ -52,7 +56,7 @@ export default function AdminMessages(){
         }
 
         fetchMessages()
-    }, [authState, currentPage])
+    }, [authState, currentPage, btnSubmit])
 
     if(isLoadingMessages){
         return (
@@ -66,6 +70,28 @@ export default function AdminMessages(){
         </div>
     }
 
+    async function handleSubmitResponse(id: number, response: string){
+        const submitResponseUrl = `http://localhost:8080/api/messages/secure/admin/message`
+
+        if(authState && authState?.isAuthenticated && id !== null && response !== ""){
+            const messageAdminRequestModel: AdminMessageRequest = new AdminMessageRequest(id, response)
+            const requestOptions = {
+                method: 'PUT',
+                headers: {
+                    Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(messageAdminRequestModel)
+            }
+            const submitResponse = await fetch(submitResponseUrl, requestOptions)
+            if(!submitResponse.ok){
+                throw new Error("Something went wrong!")
+            }
+            setBtnSubmit(!btnSubmit)
+        }
+        
+    }
+
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
 
     return (
@@ -74,7 +100,7 @@ export default function AdminMessages(){
                 <>
                     <h5>Pending Q/A: </h5>
                     {messages.map(message => (
-                        <PendingAdminMessage message={message} key={message.id} />
+                        <PendingAdminMessage message={message} submitResponse={handleSubmitResponse} key={message.id} />
                     ))}
                 </>
                 :

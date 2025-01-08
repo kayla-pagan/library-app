@@ -3,11 +3,21 @@ import { MessageModel } from "../../models/MessageModel";
 
 interface pendingAdminMessageProps {
     message: MessageModel;
+    submitResponse: any;
 }
 
-export default function PendingAdminMessage({ message }: pendingAdminMessageProps): React.ReactElement{
+export default function PendingAdminMessage({ message, submitResponse }: pendingAdminMessageProps): React.ReactElement{
     const [displayWarning, setDisplayWarning] = React.useState(false)
     const [response, setResponse] = React.useState("")
+
+    function submitBtn(){
+        if(message.id !== null && response !== ""){
+            submitResponse(message.id, response)
+            setDisplayWarning(false)
+        } else {
+            setDisplayWarning(true)
+        }
+    } 
 
     return (
         <div key={message.id}>
@@ -39,6 +49,7 @@ export default function PendingAdminMessage({ message }: pendingAdminMessageProp
                                 className="btn mt-3 text-white" 
                                 style={{ backgroundColor: "#0d47a1" }}
                                 type="button"
+                                onClick={submitBtn}
                             >
                                 Submit Response
                             </button>
