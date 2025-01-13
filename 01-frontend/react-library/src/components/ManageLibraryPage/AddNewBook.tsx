@@ -11,7 +11,6 @@ export default function AddNewBook() {
   const [description, setDescription] = React.useState("");
   const [copies, setCopies] = React.useState(0);
   const [category, setCategory] = React.useState("");
-  const [imageUrl, setImageUrl] = React.useState("");
   const [imageFile, setImageFile] = React.useState<File | null>(null);
   const [selectedImagePreview, setSelectedImgPreview] = React.useState<
     string | null
@@ -39,12 +38,13 @@ export default function AddNewBook() {
   }
 
   async function uploadImageToS3() {
-    if (!imageFile) return;
+    if (!imageFile) return "";
 
     const imageUrl = `http://localhost:8080/api/admin/secure/upload-url`;
     const requestOptions = {
       method: "POST",
       headers: {
+        Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -66,7 +66,9 @@ export default function AddNewBook() {
       },
     });
 
-    setImageUrl(url.split("?")[0]);
+    const uploadUrl = url.split("?")[0]
+    console.log("uploaded image url: ", uploadUrl)
+    return uploadUrl
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -86,15 +88,21 @@ export default function AddNewBook() {
         const book: AddBookRequest = new AddBookRequest(title, author, description, copies, category)
 
         if (imageFile) {
-            await uploadImageToS3();
-            book.img = imageUrl
+            try {
+                const uploadedImageUrl = await uploadImageToS3();
+                book.img = uploadedImageUrl
+            } catch(error:any) {
+                console.error("Image upload failed: ", error)
+                setDisplayWarning(true)
+                return
+            }
         }
 
         const requestOptions = {
             method: "POST",
             headers: {
-            Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
-            "Content-Type": "application/json",
+                Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(book),
         };
@@ -111,7 +119,6 @@ export default function AddNewBook() {
         setCopies(0);
         setCategory("");
         setImageFile(null);
-        setImageUrl("");
         setSelectedImgPreview(null);
     } else {
         setDisplayWarning(true)
