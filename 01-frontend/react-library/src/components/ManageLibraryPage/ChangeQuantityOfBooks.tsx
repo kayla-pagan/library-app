@@ -12,6 +12,8 @@ export default function ChangeQuantityOfBooks(){
     const [booksPerPage] = React.useState(5);
     const [totalAmountOfBooks, setTotalAmountOfBooks] = React.useState(0);
     const [totalPages, setTotalPages] = React.useState(0);
+    
+    const [bookDelete, setBookDelete] = React.useState(false)
 
     React.useEffect(() => {
         async function fetchBooks() {
@@ -51,7 +53,7 @@ export default function ChangeQuantityOfBooks(){
         }
     
         fetchBooks();
-    }, [currentPage]);
+    }, [currentPage, bookDelete]);
 
     const indexOfLastBook: number = currentPage * booksPerPage;
     const indexOfFirstBook: number = indexOfLastBook - booksPerPage;
@@ -60,6 +62,8 @@ export default function ChangeQuantityOfBooks(){
       ? booksPerPage * currentPage
       : totalAmountOfBooks;
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+    const deleteBook = () => setBookDelete(!bookDelete)
 
     if(isLoading){
         return (
@@ -86,7 +90,7 @@ export default function ChangeQuantityOfBooks(){
                         {indexOfFirstBook + 1}-{lastItem} of {totalAmountOfBooks} items: 
                     </p>
                     {books.map(book => (
-                        <QuantityOfBooks key={book.id} book={book} />
+                        <QuantityOfBooks key={book.id} book={book} deleteBook={deleteBook} />
                     ))}
                 </>
                 :

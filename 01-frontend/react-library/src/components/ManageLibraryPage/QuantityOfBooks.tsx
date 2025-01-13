@@ -1,12 +1,15 @@
 import React from "react";
 import BookModel from "../../models/BookModel";
 import tiffanyBookImg from "../../assets/book-tiffany-frank.svg"
+import { useOktaAuth } from "@okta/okta-react";
 
 interface quantityOfBooksProps {
     book: BookModel;
+    deleteBook: any;
 }
 
-export default function QuantityOfBooks({ book }: quantityOfBooksProps): React.ReactElement{
+export default function QuantityOfBooks({ book, deleteBook }: quantityOfBooksProps): React.ReactElement{
+    const { authState } = useOktaAuth()
     const [quantity, setQuantity] = React.useState<number>(0)
     const [remaining, setRemaining] = React.useState<number>(0)
 
@@ -17,6 +20,62 @@ export default function QuantityOfBooks({ book }: quantityOfBooksProps): React.R
         }
         fetchBooksInState()
     }, [])
+
+    async function increaseQuantity() {
+        const increaseUrl = `http://localhost:8080/api/admin/secure/increase/book/quantity?bookId=${book.id}`
+        const requestOptions = {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const increaseResponse = await fetch(increaseUrl, requestOptions)
+        if(!increaseResponse.ok){
+            throw new Error("Something went wrong!")
+        }
+
+        setQuantity(quantity + 1)
+        setRemaining(remaining + 1)
+    }
+
+    async function decreaseQuantity() {
+        const decreaseUrl = `http://localhost:8080/api/admin/secure/decrease/book/quantity?bookId=${book.id}`
+        const requestOptions = {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const decreaseResponse = await fetch(decreaseUrl, requestOptions)
+        if(!decreaseResponse.ok){
+            throw new Error("Something went wrong!")
+        }
+
+        setQuantity(quantity - 1)
+        setRemaining(remaining - 1)
+    }
+
+    async function handleDeleteBook() {
+        const deleteUrl = `http://localhost:8080/api/admin/secure/delete/book?bookId=${book.id}`
+        const requestOptions = {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const deleteResponse = await fetch(deleteUrl, requestOptions)
+        if(!deleteResponse.ok){
+            throw new Error("Something went wrong!")
+        }
+
+        deleteBook()
+    }
 
     return (
         <div className="card mt-3 shadow p-3 mb-3 bg-body rounded">
@@ -54,11 +113,29 @@ export default function QuantityOfBooks({ book }: quantityOfBooksProps): React.R
                 </div>
                 <div className="mt-3 mb-1 col-md-1">
                     <div className="d-flex justify-content-start">
-                        <button className="btn btn-md text-white" style={{backgroundColor: "#f44336"}}>Delete</button>
+                        <button 
+                            className="btn btn-md text-white" 
+                            style={{backgroundColor: "#f44336"}}
+                            onClick={handleDeleteBook}
+                        >
+                            Delete
+                        </button>
                     </div>
                 </div>
-                <button className="m1 btn btn-md text-white" style={{ backgroundColor: "#0d47a1" }}>Add Quantity</button>
-                <button className="m1 btn btn-md text-white" style={{ backgroundColor: "#f3b61f" }}>Decrease Quantity</button>
+                <button 
+                    className="m1 btn btn-md text-white" 
+                    style={{ backgroundColor: "#0d47a1" }}
+                    onClick={increaseQuantity}
+                >
+                    Add Quantity
+                </button>
+                <button 
+                    className="m1 btn btn-md text-white" 
+                    style={{ backgroundColor: "#f3b61f" }}
+                    onClick={decreaseQuantity}
+                >
+                    Decrease Quantity
+                </button>
             </div>
         </div>
     )
