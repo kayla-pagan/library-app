@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import BookModel from "../models/BookModel";
 import SpinnerLoading from "../utils/SpinnerLoading";
 import Search from "../components/SearchBooksPage/Search";
@@ -10,8 +10,8 @@ export default function SearchBooks() {
   const [httpError, setHttpError] = React.useState(null);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [booksPerPage] = React.useState(5);
-  const [totalAmountOfBooks, setTotalAmountOfBooks] = useState(0);
-  const [totalPages, setTotalPages] = useState(0);
+  const [totalAmountOfBooks, setTotalAmountOfBooks] = React.useState(0);
+  const [totalPages, setTotalPages] = React.useState(0);
   const [search, setSearch] = React.useState("");
   const [searchUrl, setSearchUrl] = React.useState("");
   const [categorySelection, setCategorySelection] = React.useState("Book category")

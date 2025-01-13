@@ -3,6 +3,7 @@ import React from "react"
 import { Navigate } from "react-router-dom"
 import AdminMessages from "../components/ManageLibraryPage/AdminMessages"
 import AddNewBook from "../components/ManageLibraryPage/AddNewBook"
+import ChangeQuantityOfBooks from "../components/ManageLibraryPage/ChangeQuantityOfBooks"
 
 export default function ManageLibrary(){
     const { authState } = useOktaAuth()
@@ -90,7 +91,7 @@ export default function ManageLibrary(){
                         role="tabpanel" 
                         aria-labelledby="nav-quantity-tab"
                     >
-                        {changeQuantityOfBooksClicked ? <>Change Quantity</> : <></>}
+                        {changeQuantityOfBooksClicked ? <ChangeQuantityOfBooks /> : <></>}
                     </div>
                     <div 
                         className="tab-pane fade" 
