@@ -30,7 +30,13 @@ public class AdminController {
     }
 
     @PostMapping("/secure/upload-url")
-    public Map<String, String> getUploadUrl(@RequestBody Map<String, String> payload) throws Exception {
+    public Map<String, String> getUploadUrl(@RequestHeader(value = "Authorization") String token,
+                                            @RequestBody Map<String, String> payload) throws Exception {
+        String admin = ExtractJWT.payloadJWTExtraction(token, "\"userType\"");
+        if(admin == null || !admin.equals("admin")) {
+            throw new Exception("Administration page only.");
+        }
+
         String fileName = payload.get("fileName");
         String fileType = payload.get("fileType");
         String url = adminService.generatePresignedUrl(fileName, fileType);
