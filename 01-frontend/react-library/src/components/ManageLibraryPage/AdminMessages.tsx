@@ -92,13 +92,48 @@ export default function AdminMessages(){
         
     }
 
+    async function handleGenerateReport(){
+        try {
+            const reportUrl = `http://localhost:8080/api/messages/secure/generate-report`
+            const requestOptions = {
+                headers: {
+                    Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                }
+            }
+            const reportResponse = await fetch(reportUrl, requestOptions)
+            if(!reportResponse.ok){
+                throw new Error("Failed to generate report")
+            }
+
+            const blob = await reportResponse.blob()
+            const url = window.URL.createObjectURL(blob)
+            const link = document.createElement("a")
+            link.href = url
+            link.setAttribute("download", "messages-report.csv")
+            document.body.appendChild(link)
+            link.click()
+            link.remove()
+        } catch (error: any) {
+            console.error("Error generating report:", error.message)
+        }
+    }
+
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
 
     return (
         <div className="mt-3">
             {messages.length > 0 ? 
                 <>
-                    <h5>Pending Q/A: </h5>
+                    <div className="d-flex justify-content-between align-items-center mb-3">
+                        <h5>Pending Q/A: </h5>
+                        <button 
+                            className="btn text-white" 
+                            style={{ backgroundColor: "#2196f3" }}
+                            onClick={handleGenerateReport}
+                        >
+                            Generate Report
+                        </button>
+                    </div>
                     {messages.map(message => (
                         <PendingAdminMessage message={message} submitResponse={handleSubmitResponse} key={message.id} />
                     ))}
