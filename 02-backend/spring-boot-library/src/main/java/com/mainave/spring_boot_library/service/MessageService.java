@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,5 +37,9 @@ public class MessageService {
         message.get().setResponse(adminQuestionRequest.getResponse());
         message.get().setClosed(true);
         messageRepository.save(message.get());
+    }
+
+    public List<Message> getAllMessages() {
+        return messageRepository.findAll();
     }
 }

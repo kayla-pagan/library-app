@@ -2,6 +2,7 @@ package com.mainave.spring_boot_library.service;
 
 import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.mainave.spring_boot_library.dao.BookRepository;
 import com.mainave.spring_boot_library.dao.CheckoutRepository;
@@ -91,8 +92,14 @@ public class AdminService {
             throw new Exception("Book not found");
         }
 
-        bookRepository.delete(book.get());
         checkoutRepository.deleteAllByBookId(bookId);
         reviewRepository.deleteAllByBookId(bookId);
+        String bookImage = book.get().getImg();
+        if(bookImage != null && !bookImage.isEmpty()){
+            String bucketName = "main-ave-book-images";
+            String objectKey = bookImage.substring(bookImage.lastIndexOf("/") +1);
+            amazonS3.deleteObject(new DeleteObjectRequest(bucketName, objectKey));
+        }
+        bookRepository.delete(book.get());
     }
 }
