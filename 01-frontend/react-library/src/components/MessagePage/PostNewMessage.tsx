@@ -4,13 +4,15 @@ import { MessageModel } from "../../models/MessageModel";
 
 export default function PostNewMessage(){
     const { authState } = useOktaAuth()
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
     const [title, setTitle] = React.useState("")
     const [question, setQuestion] = React.useState("")
     const [displayWarning, setDisplayWarning] = React.useState(false)
     const [displaySuccess, setDisplaySuccess] = React.useState(false)
 
     async function handleSubmitNewQuestion() {
-        const submitQuestionUrl = `http://localhost:8080/api/messages/secure/add/message`
+        const submitQuestionUrl = `${apiUrl}/api/messages/secure/add/message`
 
         if(authState?.isAuthenticated && title !== "" && question !== ""){
             const messageRequestModel: MessageModel = new MessageModel(title, question)

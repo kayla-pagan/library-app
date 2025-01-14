@@ -5,6 +5,8 @@ import Review from "../utils/Review"
 import Pagination from "../utils/Pagination"
 
 export default function ReviewList(){
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
     const [reviews, setReviews] = React.useState<ReviewModel[]>([])
     const [isLoading, setIsLoading] = React.useState(false)
     const [httpError, setHttpError] = React.useState(null)
@@ -21,7 +23,7 @@ export default function ReviewList(){
         async function fetchBookReviews() {
           setIsLoading(true);
           try {
-            const reviewUrl: string = `http://localhost:8080/api/reviews/search/findByBookId?bookId=${bookId}&page=${currentPage - 1}&size=${reviewsPerPage}`;
+            const reviewUrl: string = `${apiUrl}/api/reviews/search/findByBookId?bookId=${bookId}&page=${currentPage - 1}&size=${reviewsPerPage}`;
     
             const responseReviews = await fetch(reviewUrl);
     

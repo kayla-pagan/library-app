@@ -5,6 +5,8 @@ import Pagination from "../../utils/Pagination";
 import QuantityOfBooks from "./QuantityOfBooks";
 
 export default function ChangeQuantityOfBooks(){
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
     const [books, setBooks] = React.useState<BookModel[]>([]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [httpError, setHttpError] = React.useState(null);
@@ -19,7 +21,7 @@ export default function ChangeQuantityOfBooks(){
         async function fetchBooks() {
         setIsLoading(true);
         try {
-            const bookUrl: string = `http://localhost:8080/api/books?page=${currentPage - 1}&size=${booksPerPage}`;
+            const bookUrl: string = `${apiUrl}/api/books?page=${currentPage - 1}&size=${booksPerPage}`;
     
             const response = await fetch(bookUrl);
     

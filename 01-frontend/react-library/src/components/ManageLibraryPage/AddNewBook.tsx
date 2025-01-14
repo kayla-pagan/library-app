@@ -4,6 +4,7 @@ import AddBookRequest from "../../models/AddBookRequest";
 
 export default function AddNewBook() {
   const { authState } = useOktaAuth();
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
   // new book state
   const [title, setTitle] = React.useState("");
@@ -40,7 +41,7 @@ export default function AddNewBook() {
   async function uploadImageToS3() {
     if (!imageFile) return "";
 
-    const imageUrl = `http://localhost:8080/api/admin/secure/upload-url`;
+    const imageUrl = `${apiUrl}/api/admin/secure/upload-url`;
     const requestOptions = {
       method: "POST",
       headers: {
@@ -73,7 +74,7 @@ export default function AddNewBook() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const submitBookUrl = `http://localhost:8080/api/admin/secure/add/book`;
+    const submitBookUrl = `${apiUrl}/api/admin/secure/add/book`;
 
     if (
       authState?.isAuthenticated &&

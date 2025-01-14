@@ -8,6 +8,8 @@ import LoansModal from "./LoansModal";
 
 export default function Loans() {
   const { authState } = useOktaAuth();
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
   const [httpError, setHttpError] = React.useState(null);
 
   // current loans state
@@ -20,7 +22,7 @@ export default function Loans() {
       setIsLoadingUserLoans(true);
       try {
         if (authState && authState.isAuthenticated) {
-          const shelfCurrentLoansUrl = `http://localhost:8080/api/books/secure/currentloans`;
+          const shelfCurrentLoansUrl = `${apiUrl}/api/books/secure/currentloans`;
           const requestOptions = {
             method: "GET",
             headers: {
@@ -64,7 +66,7 @@ export default function Loans() {
   }
 
   async function returnBook(bookId: number) {
-    const returnBookUrl = `http://localhost:8080/api/books/secure/return?bookId=${bookId}`
+    const returnBookUrl = `${apiUrl}/api/books/secure/return?bookId=${bookId}`
     const requestOptions = {
         method: "PUT",
             headers: {
@@ -81,7 +83,7 @@ export default function Loans() {
   }
 
   async function renewLoan(bookId: number) {
-    const renewLoanUrl = `http://localhost:8080/api/books/secure/renew/loan?bookId=${bookId}`
+    const renewLoanUrl = `${apiUrl}/api/books/secure/renew/loan?bookId=${bookId}`
     const requestOptions = {
         method: "PUT",
             headers: {

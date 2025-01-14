@@ -6,6 +6,8 @@ import Pagination from "../../utils/Pagination"
 
 export default function Messages(){
     const { authState } = useOktaAuth()
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
     const [isLoadingMessages, setIsLoadingMessages] = React.useState(false)
     const [httpError, setHttpError] = React.useState(null)
 
@@ -21,7 +23,7 @@ export default function Messages(){
         async function fetchUserMessages(){
             try {
                 if(authState && authState?.isAuthenticated){
-                    const userMessageUrl = `http://localhost:8080/api/messages/search/findByUserEmail?userEmail=${authState.accessToken?.claims.sub}&page=${currentPage - 1}&size=${messagesPerPage}`
+                    const userMessageUrl = `${apiUrl}/api/messages/search/findByUserEmail?userEmail=${authState.accessToken?.claims.sub}&page=${currentPage - 1}&size=${messagesPerPage}`
                     const requestOptions = {
                         method: 'GET',
                         headers : {

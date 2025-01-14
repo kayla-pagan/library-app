@@ -10,6 +10,8 @@ interface quantityOfBooksProps {
 
 export default function QuantityOfBooks({ book, deleteBook }: quantityOfBooksProps): React.ReactElement{
     const { authState } = useOktaAuth()
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
     const [quantity, setQuantity] = React.useState<number>(0)
     const [remaining, setRemaining] = React.useState<number>(0)
 
@@ -22,7 +24,7 @@ export default function QuantityOfBooks({ book, deleteBook }: quantityOfBooksPro
     }, [])
 
     async function increaseQuantity() {
-        const increaseUrl = `http://localhost:8080/api/admin/secure/increase/book/quantity?bookId=${book.id}`
+        const increaseUrl = `${apiUrl}/api/admin/secure/increase/book/quantity?bookId=${book.id}`
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -41,7 +43,7 @@ export default function QuantityOfBooks({ book, deleteBook }: quantityOfBooksPro
     }
 
     async function decreaseQuantity() {
-        const decreaseUrl = `http://localhost:8080/api/admin/secure/decrease/book/quantity?bookId=${book.id}`
+        const decreaseUrl = `${apiUrl}/api/admin/secure/decrease/book/quantity?bookId=${book.id}`
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -60,7 +62,7 @@ export default function QuantityOfBooks({ book, deleteBook }: quantityOfBooksPro
     }
 
     async function handleDeleteBook() {
-        const deleteUrl = `http://localhost:8080/api/admin/secure/delete/book?bookId=${book.id}`
+        const deleteUrl = `${apiUrl}/api/admin/secure/delete/book?bookId=${book.id}`
         const requestOptions = {
             method: 'DELETE',
             headers: {

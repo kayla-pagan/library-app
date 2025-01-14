@@ -11,6 +11,7 @@ import ReviewRequestModel from "../models/ReviewRequestModel";
 
 export default function CheckoutBook() {
   const { authState } = useOktaAuth();
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
   const [book, setBook] = React.useState<BookModel>();
   const [isLoadingBook, setIsLoadingBook] = React.useState(false);
@@ -39,7 +40,7 @@ export default function CheckoutBook() {
     async function fetchBooks() {
       setIsLoadingBook(true);
       try {
-        const baseUrl: string = `http://localhost:8080/api/books/${bookId}`;
+        const baseUrl: string = `${apiUrl}/api/books/${bookId}`;
 
         const response = await fetch(baseUrl);
 
@@ -75,7 +76,7 @@ export default function CheckoutBook() {
     async function fetchBookReviews() {
       setIsLoadingReview(true);
       try {
-        const reviewUrl: string = `http://localhost:8080/api/reviews/search/findByBookId?bookId=${bookId}`;
+        const reviewUrl: string = `${apiUrl}/api/reviews/search/findByBookId?bookId=${bookId}`;
 
         const responseReviews = await fetch(reviewUrl);
 
@@ -125,7 +126,7 @@ export default function CheckoutBook() {
         setIsLoadingUserReview(true)
         try {
             if(authState && authState.isAuthenticated){
-                const userReviewUrl = `http://localhost:8080/api/reviews/secure/user/book?bookId=${bookId}`
+                const userReviewUrl = `${apiUrl}/api/reviews/secure/user/book?bookId=${bookId}`
                 const requestOptions = {
                     method: 'GET',
                     headers: {
@@ -156,7 +157,7 @@ export default function CheckoutBook() {
       setIsLoadingCurrentLoans(true);
       try {
         if (authState && authState.isAuthenticated) {
-          const loansUrl = `http://localhost:8080/api/books/secure/currentloans/count`;
+          const loansUrl = `${apiUrl}/api/books/secure/currentloans/count`;
           const requestOptions = {
             method: "GET",
             headers: {
@@ -188,7 +189,7 @@ export default function CheckoutBook() {
       setIsLoadingBookCheckedOut(true);
       try {
         if (authState && authState.isAuthenticated) {
-          const isCheckedOutUrl = `http://localhost:8080/api/books/secure/ischeckedout/byuser?bookId=${bookId}`;
+          const isCheckedOutUrl = `${apiUrl}/api/books/secure/ischeckedout/byuser?bookId=${bookId}`;
           const requestOptions = {
             method: "GET",
             headers: {
@@ -230,7 +231,7 @@ export default function CheckoutBook() {
   }
 
   async function checkoutBook() {
-    const checkoutUrl = `http://localhost:8080/api/books/secure/checkout?bookId=${book?.id}`
+    const checkoutUrl = `${apiUrl}/api/books/secure/checkout?bookId=${book?.id}`
     const requestOptions = {
         method: 'PUT', 
         headers: {
@@ -258,7 +259,7 @@ export default function CheckoutBook() {
         bookId = book.id
     }
     const reviewRequestModel = new ReviewRequestModel(starInput, bookId, reviewDescription)
-    const submitReviewUrl = `http://localhost:8080/api/reviews/secure`
+    const submitReviewUrl = `${apiUrl}/api/reviews/secure`
     const requestOptions = {
         method: 'POST',
         headers: {

@@ -8,6 +8,7 @@ import AdminMessageRequest from "../../models/AdminMessageRequest";
 
 export default function AdminMessages(){
     const { authState } = useOktaAuth()
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
     
     // loading state
     const [isLoadingMessages, setIsLoadingMessages] = React.useState(false)
@@ -29,7 +30,7 @@ export default function AdminMessages(){
             setIsLoadingMessages(true)
             try {
                 if(authState && authState.isAuthenticated){
-                    const adminUserMessagesUrl = `http://localhost:8080/api/messages/search/findByClosed?closed=false&page=${currentPage - 1}&size=${messagesPerPage}`
+                    const adminUserMessagesUrl = `${apiUrl}/api/messages/search/findByClosed?closed=false&page=${currentPage - 1}&size=${messagesPerPage}`
                     const requestOptions = {
                         method: 'GET',
                         headers: {
@@ -71,7 +72,7 @@ export default function AdminMessages(){
     }
 
     async function handleSubmitResponse(id: number, response: string){
-        const submitResponseUrl = `http://localhost:8080/api/messages/secure/admin/message`
+        const submitResponseUrl = `${apiUrl}/api/messages/secure/admin/message`
 
         if(authState && authState?.isAuthenticated && id !== null && response !== ""){
             const messageAdminRequestModel: AdminMessageRequest = new AdminMessageRequest(id, response)
@@ -94,7 +95,7 @@ export default function AdminMessages(){
 
     async function handleGenerateReport(){
         try {
-            const reportUrl = `http://localhost:8080/api/messages/secure/generate-report`
+            const reportUrl = `${apiUrl}/api/messages/secure/generate-report`
             const requestOptions = {
                 headers: {
                     Authorization: `Bearer ${authState?.accessToken?.accessToken}`,

@@ -8,6 +8,8 @@ import Pagination from "../utils/Pagination";
 
 export default function History(){
     const { authState } = useOktaAuth()
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
     const [isLoading, setIsLoading] = React.useState(false)
     const [httpError, setHttpError] = React.useState(null)
 
@@ -23,7 +25,7 @@ export default function History(){
             setIsLoading(true)
             try {
                 if(authState && authState.isAuthenticated){
-                    const userHistoryUrl = `http://localhost:8080/api/histories/search/findBooksByUserEmail?userEmail=${authState.accessToken?.claims.sub}&page=${currentPage - 1}&size=5`
+                    const userHistoryUrl = `${apiUrl}/api/histories/search/findBooksByUserEmail?userEmail=${authState.accessToken?.claims.sub}&page=${currentPage - 1}&size=5`
                     const requestOptions = {
                         method: 'GET',
                         headers: {
