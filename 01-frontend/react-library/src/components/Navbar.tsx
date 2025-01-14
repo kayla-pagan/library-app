@@ -21,6 +21,7 @@ export default function Navbar() {
     <nav
       className="navbar navbar-light navbar-expand-lg shadow"
       style={{ backgroundColor: "#e3f2fd" }}
+      role="navigation"
     >
       <div className="container-fluid">
         <Link to="/">
