@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "main-ave-app:latest",
+    "Name": "main-ave-app",
     "Update": "true"
   },
   "Ports": [
