@@ -9,6 +9,7 @@ export default function Carousel() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [httpError, setHttpError] = React.useState(null);
   const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+  console.log('API URL is:', apiUrl)
 
   React.useEffect(() => {
     async function fetchBooks() {
