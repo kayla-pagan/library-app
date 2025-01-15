@@ -7,7 +7,10 @@ import EnvironmentPlugin from 'vite-plugin-environment'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),
-    EnvironmentPlugin(['VITE_API_URL', 'VITE_REDIRECT_URI'])
+    EnvironmentPlugin({
+      VITE_API_URL: 'http://localhost:8080',
+      VITE_REDIRECT_URI: 'http://localhost:8080/login/callback',
+    })
   ],
   test: {
     globals: true,
