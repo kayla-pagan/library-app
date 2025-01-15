@@ -7,7 +7,7 @@ import EnvironmentPlugin from 'vite-plugin-environment'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),
-    EnvironmentPlugin('all', { prefix: 'VITE_' })
+    EnvironmentPlugin(['VITE_API_URL', 'VITE_REDIRECT_URI'])
   ],
   test: {
     globals: true,
