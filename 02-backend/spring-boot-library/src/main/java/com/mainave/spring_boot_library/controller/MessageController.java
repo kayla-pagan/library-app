@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin({"http://localhost:5173", "http://mainavebooks.us-east-1.elasticbeanstalk.com"})
 @RestController
 @RequestMapping("/api/messages")
 public class MessageController {

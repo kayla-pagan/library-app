@@ -30,7 +30,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         // Configure CORS Mapping
         String allowedOrigins = "http://localhost:5173";
-        corsRegistry.addMapping(config.getBasePath() + "/**").allowedOrigins(allowedOrigins);
+        String devOrigins = "http://mainavebooks.us-east-1.elasticbeanstalk.com";
+        corsRegistry.addMapping(config.getBasePath() + "/**").allowedOrigins(allowedOrigins, devOrigins);
     }
 
     private void disableHttpMethods(Class myClass, RepositoryRestConfiguration config, HttpMethod[] unsupportedActions) {
