@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@CrossOrigin({"http://localhost:5173", "http://mainavebooks.us-east-1.elasticbeanstalk.com"})
+@CrossOrigin({"http://localhost:5173", "https://mainavebooks.com"})
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {

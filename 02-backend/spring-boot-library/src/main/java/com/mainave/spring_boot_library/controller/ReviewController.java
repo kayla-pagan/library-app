@@ -5,7 +5,7 @@ import com.mainave.spring_boot_library.service.ReviewService;
 import com.mainave.spring_boot_library.utils.ExtractJWT;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin({"http://localhost:5173", "http://mainavebooks.us-east-1.elasticbeanstalk.com"})
+@CrossOrigin({"http://localhost:5173", "https://mainavebooks.com"})
 @RestController
 @RequestMapping("/api/reviews")
 public class ReviewController {
