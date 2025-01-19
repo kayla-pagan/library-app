@@ -8,7 +8,10 @@ import AdminMessageRequest from "../../models/AdminMessageRequest";
 
 export default function AdminMessages(){
     const { authState } = useOktaAuth()
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+    const apiUrl = ``;
+    /* for local development and changes to this project please uncomment the
+    variable below 'localUrl' and replace apiUrl on this app with this */
+    // const localUrl = `http://localhost:8080`
     
     // loading state
     const [isLoadingMessages, setIsLoadingMessages] = React.useState(false)

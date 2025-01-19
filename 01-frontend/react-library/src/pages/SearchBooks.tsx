@@ -5,7 +5,10 @@ import Search from "../components/SearchBooksPage/Search";
 import Pagination from "../utils/Pagination";
 
 export default function SearchBooks() {
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+  const apiUrl = ``;
+  /* for local development and changes to this project please uncomment the
+  variable below 'localUrl' and replace apiUrl on this app with this */
+  // const localUrl = `http://localhost:8080`
 
   const [books, setBooks] = React.useState<BookModel[]>([]);
   const [isLoading, setIsLoading] = React.useState(false);

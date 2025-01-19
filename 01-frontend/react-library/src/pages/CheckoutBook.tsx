@@ -11,7 +11,10 @@ import ReviewRequestModel from "../models/ReviewRequestModel";
 
 export default function CheckoutBook() {
   const { authState } = useOktaAuth();
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+  const apiUrl = ``;
+  /* for local development and changes to this project please uncomment the
+  variable below 'localUrl' and replace apiUrl on this app with this */
+  // const localUrl = `http://localhost:8080`
 
   const [book, setBook] = React.useState<BookModel>();
   const [isLoadingBook, setIsLoadingBook] = React.useState(false);

@@ -10,7 +10,10 @@ interface quantityOfBooksProps {
 
 export default function QuantityOfBooks({ book, deleteBook }: quantityOfBooksProps): React.ReactElement{
     const { authState } = useOktaAuth()
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+    const apiUrl = ``;
+    /* for local development and changes to this project please uncomment the
+    variable below 'localUrl' and replace apiUrl on this app with this */
+    // const localUrl = `http://localhost:8080`
 
     const [quantity, setQuantity] = React.useState<number>(0)
     const [remaining, setRemaining] = React.useState<number>(0)
