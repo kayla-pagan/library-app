@@ -121,7 +121,7 @@ export default function History(){
                     <Link 
                         className="btn text-white" 
                         style={{ backgroundColor: "#0d47a1" }}
-                        to={"/search"}
+                        to="/search"
                     >
                         Search for a new book
                     </Link>

@@ -157,7 +157,7 @@ export default function Loans() {
                           </button>
                           <Link
                             className="list-group-item list-group-item-action"
-                            to={"/search"}
+                            to="/search"
                           >
                             Search more books?
                           </Link>
@@ -188,7 +188,7 @@ export default function Loans() {
             <Link
               className="btn text-white"
               style={{ backgroundColor: "#0d47a1" }}
-              to={"search"}
+              to="/search"
             >
               Search for a new book
             </Link>
@@ -248,7 +248,7 @@ export default function Loans() {
                           </button>
                           <Link
                             className="list-group-item list-group-item-action"
-                            to={"/search"}
+                            to="/search"
                           >
                             Search more books?
                           </Link>
@@ -278,7 +278,7 @@ export default function Loans() {
             <Link
               className="btn text-white"
               style={{ backgroundColor: "#0d47a1" }}
-              to={"search"}
+              to="/search"
             >
               Search for a new book
             </Link>

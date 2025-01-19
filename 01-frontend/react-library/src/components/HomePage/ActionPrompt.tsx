@@ -25,7 +25,7 @@ export default function ActionPrompt() {
                   className="btn btn-lg text-white"
                   style={{ backgroundColor: "#0d47a1" }}
                   type="button"
-                  to="search"
+                  to="/search"
                 >
                   Explore top books
                 </Link>
