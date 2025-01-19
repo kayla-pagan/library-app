@@ -1,0 +1,893 @@
+commit 77e5220c1c6b1a89b1223fba35df38fe5b8ef507
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 19 13:04:20 2025 -0500
+
+    Task 3 parts C & D document
+
+commit fae659664526129210c7219a9391a91aa8775bc9
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 19 12:07:42 2025 -0500
+
+    edit links to make sure they are absolute and lead to search page
+
+commit 70343fd6baddbf09c23806885e8e5b0e14f0144c
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 19 00:38:19 2025 -0500
+
+    update front end api requests and config for dist build
+
+commit e19fc53dc250ee69289761e16e0b2b284bf3f9f4
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 19 00:37:28 2025 -0500
+
+    configure back end for static front end files
+
+commit 29ddf1a6ccbbd19249d9332e169186aa33bfc0d7
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 17:51:53 2025 -0500
+
+    continue to test config options
+
+commit 57a50a83d92db08172bdb661693c82071a4fd23d
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 17:40:29 2025 -0500
+
+    frontend was updated, copy dist folder to static
+
+commit 6f07a33d8e56eaa925713fe12492d51c1bcdecbb
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 04:27:06 2025 -0500
+
+    update vite config and env folder
+
+commit 70fc8181938a2d57e878305b9becf47141f60c7c
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 04:09:53 2025 -0500
+
+    update static directory
+
+commit 0af54463916123dfba6bc6b7d8af383ed998688b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 04:07:14 2025 -0500
+
+    update vite config for env
+
+commit c512f2985d2aa66dafd63d6b9f8210f980635707
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 02:53:37 2025 -0500
+
+    update aws eb config
+
+commit 2151e0495fbb0a8a754dc1346f8d9d717ff4d093
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 02:52:52 2025 -0500
+
+    update frontend okta config
+
+commit 39250d7927152270226615d3c7d5f2ed72c6ae1e
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 15 02:12:46 2025 -0500
+
+    create docker file and image
+
+commit 4af937d6d18ee72b41ef5d586c73035e99bd559f
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 23:35:47 2025 -0500
+
+    refresh static folders with changes made to front end
+
+commit 2b58073b42d9d020654c4f6fca9d147c90b7ee5b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 16:50:52 2025 -0500
+
+    add tests config and create app tests with vitest
+
+commit f3c25d3212edda57398aa9c0d9b7cba5ef636ba4
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 14:23:19 2025 -0500
+
+    add env uri for okta
+
+commit 3afbdab3cded7650d44ef81c169052d0d2ade9c1
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 14:22:34 2025 -0500
+
+    add rebuilt content to static folder in backend
+
+commit c18a7f9e3a2d2223ccca6dcf61cfd399c003198e
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 13:26:52 2025 -0500
+
+    add frontend build to backend
+
+commit 25def10d88cb60060e49eae3de4bc288372d2022
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 13:26:11 2025 -0500
+
+    update base url
+
+commit e2d034b5b332d117ce5a35bb780787bffe68a63b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 12:25:13 2025 -0500
+
+    set db config correctly
+
+commit 06439c2d63d418127c1e9ad5822d00bece311c40
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 14 12:02:36 2025 -0500
+
+    add aws database
+
+commit 2a4e62c83c252357943bf053762043ecac1a0c05
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 19:31:54 2025 -0500
+
+    add s3 delete
+
+commit 997976aa0d231b07f04bdfd51b80911abf2a91fd
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 19:31:17 2025 -0500
+
+    update generate report btn color
+
+commit 4f3d7c9ae25ffe84fbf6b2a18580234746c9a5b9
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 17:15:33 2025 -0500
+
+    update checkout and review repository queries for delete methods
+
+commit 2e59388f1d25a6914089e00be1e8e381bab8ded4
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 17:14:40 2025 -0500
+
+    add delete functions
+
+commit a3cc03a386704818a391d14016486cde14f48673
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 16:11:32 2025 -0500
+
+    add delete, increase and decrease functionality for admin
+
+commit 1f8102d7c95183d1b731f08ba8a366bac72bc66e
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 03:26:39 2025 -0500
+
+    update default image. create admin component to display quantity of books
+
+commit ea7972c043e837b539d3f3e78ec5b172d58ffb22
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 02:11:52 2025 -0500
+
+    configure backend controller logic to also require authorization on url creation
+
+commit 728c6bc56a6db0218df4ece6cb67abdc5d60be53
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Jan 13 02:10:52 2025 -0500
+
+    refine s3 upload logic so that url is updated before submitting to backend
+
+commit 9e7e6cb2c6ebc6e67c1de04eb8d9bcf19dd0af70
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 12 13:19:59 2025 -0500
+
+    add functions to handle image uploads and form submit
+
+commit 69523f49a63f426dd79e12cbdefdcd256844cf31
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 12 13:19:03 2025 -0500
+
+    complete s3 set up and related methods for admin image upload
+
+commit 3faa1c0f743cd9ed7d6676d8f9f5abb4ab08d3c3
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 8 16:09:23 2025 -0500
+
+    add endpoint for url upload
+
+commit 4de76f77081618ef0b5a36506b779aa42afe10ed
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 8 15:57:59 2025 -0500
+
+    create service to generate a url when admin uploads a picture
+
+commit 5c01e699eb6d3663298781e3fa6fca479afa4581
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 8 15:49:10 2025 -0500
+
+    add amazon aws to dependencies. create s3config
+
+commit 3224f1e26cfd55fc4cdda882d3ebfb373bef1391
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 23:20:50 2025 -0500
+
+    create add new book component
+
+commit da52cdbbb1bf65f9549a60f220c969f6405ac30e
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 22:20:42 2025 -0500
+
+    create add book request model
+
+commit 387218ee8614adfb20b7dcfc6c9654c1d7f1bdf1
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 22:14:37 2025 -0500
+
+    create admin controller and add to config
+
+commit 52aef0b5de6049f9c43ce4a71888dced31bc89a8
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 22:05:44 2025 -0500
+
+    create admin service
+
+commit bd9d32ad7ed573fc1b802e7bb99f8e5ee6f14ea7
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 21:58:07 2025 -0500
+
+    create add book request object
+
+commit e15bea80dc1607e9ad290da67833000029686599
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 21:54:50 2025 -0500
+
+    add functions to handle submit actions
+
+commit 9b6432cd0dd9f017e8f6a3e256148dfc1813c0a6
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 21:35:05 2025 -0500
+
+    create admin request model
+
+commit 8a34c2393ea1b5cd1a2781a15c5a36f2bb3c35ec
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 21:31:42 2025 -0500
+
+    create admin request service method and controller endpoint
+
+commit dba9e5399bfc0475a9fb7da94e03c09159e7ba64
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 21:19:34 2025 -0500
+
+    create component for single message to admin. clean up code in other files
+
+commit 5425134ea4fa31c4d80aa34d02aa28520a6b32e2
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 19:50:55 2025 -0500
+
+    create new endpoint for admin messsages
+
+commit 5d935f1558b402921bd2583d4b2c8f2f95986945
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 19:22:47 2025 -0500
+
+    add functions for tab state. re-route users to home if they are not an admin user. they cannot accesst his page
+
+commit 2f1dcd937a0b0cb4e7faa0d2f2d463d8078e9966
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Jan 7 18:50:32 2025 -0500
+
+    create manage library page and add to routes
+
+commit f611486aa2da2ddf9b25b37892cb8bfa00554ddd
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 22:35:32 2025 -0500
+
+    add html/css for response tab pane
+
+commit 11da8a65c8bd7d08d0d7926d2327272d316403cb
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 22:34:28 2025 -0500
+
+    fix messages config
+
+commit b38632ec555db3ed6f8803f118d938032b0c9d93
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 21:56:48 2025 -0500
+
+    add findByUserEmail and config in data rest config file
+
+commit f1b5cea77c6d47bf18f2423e90bb64689a2ec9a9
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 21:52:32 2025 -0500
+
+    create function to handle form submit
+
+commit 2a84a032f0e26b2796d1678795cb0a9b2168eba7
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 21:14:41 2025 -0500
+
+    create form component to add title and question for messages
+
+commit e62d6c4074cec5183a0a2886c2bac86eafa9b84d
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 20:26:47 2025 -0500
+
+    add message endpoint to security config
+
+commit f18ee670b6b39b4b3290d88f1952ef1b17f37b5b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 20:26:07 2025 -0500
+
+    create message model
+
+commit 9872c37160e60f5c66e636629a3bccf31827df52
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 20:07:18 2025 -0500
+
+    create messages page component and add to routes
+
+commit 4b383aa78a5128fe2ca8403ffa454f0b894d5faf
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 19:24:27 2025 -0500
+
+    create message controller with post message endpoint
+
+commit a8e49c9f6ed499f5593d12dd75cb576fdb273f9b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 19:18:20 2025 -0500
+
+    create message service
+
+commit 30388fbe280c55d955a82b74c79ee23bb1d961d9
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 19:14:07 2025 -0500
+
+    create message repository
+
+commit 8215a3b25604bac6e8873182f2cc91c3e6b18cb6
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Jan 5 19:06:20 2025 -0500
+
+    create message entity
+
+commit 2b5228f35480cdfcfc0e39c9aa354ad344374d8a
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 14:45:55 2025 -0500
+
+    add histories to secured config endpoints
+
+commit 9f3329590be5f096cf723cb7f58d3fa5792cb129
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 14:45:22 2025 -0500
+
+    add authorization to request
+
+commit 6390f1b0938bfa9dfcc1c3506799aafdeae3b5f0
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 13:02:24 2025 -0500
+
+    create history object inside of return book method. save to history repository
+
+commit 88d41f17901cefe3e6ea6f81eb67ce09878e06af
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 13:01:37 2025 -0500
+
+    create history model
+
+commit 02eafdf3377ebedfd55803110fbdf421d5b036dd
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 12:51:29 2025 -0500
+
+    create history repository
+
+commit e4d79975d244f21548ab847f0c12e399d4f4458b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 12:48:41 2025 -0500
+
+    create history entity
+
+commit 5169ab8e6e7629ffdb8f25e0a9af247c14a03605
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 01:05:04 2025 -0500
+
+    create renew loan method and endpoint
+
+commit 2b4d683bdd6d2c190aef2caf22b5232ca36b18f6
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 01:03:59 2025 -0500
+
+    create renew loan function and add to modal
+
+commit 493c75031c9a9516b890f4b1bd93eb01485c16ab
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 00:09:46 2025 -0500
+
+    create return book endpoint
+
+commit 0d5a2f10be030aef2e3f2d36f0b5d0de5a81a4d0
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Jan 4 00:03:49 2025 -0500
+
+    add method to return book
+
+commit 4990d0de45ebf50470391be4f610798b4bb1043d
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Jan 3 23:59:19 2025 -0500
+
+    create loan modal component so that users can manage their book loan
+
+commit 4cfed3683a7583d9e92d4f725f9d97453626b69c
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Jan 3 23:21:45 2025 -0500
+
+    add mobile version of loans component. put use navigate for protected route in a useEffect
+
+commit 992ee5b7a0eb250105f72a4373e7b5d65067d4bf
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Jan 3 21:14:44 2025 -0500
+
+    set loading states to false where a httpError occurs. Add html and css for desktop of loans component
+
+commit 77f87ecc320c5924a37c3b57d192aa88c89cf742
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Jan 3 20:20:44 2025 -0500
+
+    create model for shelf current loans
+
+commit 7093c4e24c80a7f161311417c6c5b8ab978cd72c
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Jan 3 20:09:31 2025 -0500
+
+    create response model and controller endpoint for current loans
+
+commit b4f0d91379ad089897eeb319a90fc5c277e7666a
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Jan 3 18:37:25 2025 -0500
+
+    create shelf page
+
+commit e094b4ee03ee93ab7934a9aff690bd18a301e1e5
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Jan 3 01:33:11 2025 -0500
+
+    add page to show all reviews
+
+commit a2e51c9dd2902b413f996d5391eb58d1cffd54b1
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Jan 2 16:45:07 2025 -0500
+
+    create submit review function and pass down as props
+
+commit bb9f6d57d1895b6d29d3304022302efa9f5d8fba
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Jan 2 16:28:49 2025 -0500
+
+    create review request model
+
+commit d50651a800c0cf05b1c045da3ae52d44548f62b3
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Jan 2 16:24:29 2025 -0500
+
+    add reviews api endpoint to cors config
+
+commit 7151f52d06969c481d0a40a6687074b1bedf27a8
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Jan 2 16:23:34 2025 -0500
+
+    add form when signed in user initiates leaving a review
+
+commit 61791a3db71b6c84a9f6542b7c83f5be16f4f9dd
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Jan 2 14:31:59 2025 -0500
+
+    add review prop to checkout and review box. display message according to whether user left a review or if they are signed out
+
+commit b956e00d77dd2a1e19304eac24ad4e8eb793b9ca
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 23:56:55 2025 -0500
+
+    add api endpoints to check whether a user already left a review or not
+
+commit 5d252f57428c1ea0145856d1ec525598ae61b083
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 23:56:02 2025 -0500
+
+    create user review fetch in useEffect
+
+commit 9bac26d3ecb4bd08df565de421503a776a3c7c51
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 23:21:37 2025 -0500
+
+    create review request, service and controller
+
+commit cc7016a495410aeb3cdab80e5d41bcdf92b8ebf0
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 21:12:26 2025 -0500
+
+    display whether a book is checked out and how many books out of 5 a user has checked out
+
+commit be87c28f05e5ac08f3ed3bf2043533c52f77c9d3
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 21:07:41 2025 -0500
+
+    complete backend config for security api
+
+commit e6ac08f201959d753dec8a9c9de2d715f8199c8d
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 17:28:32 2025 -0500
+
+    add checkout count and is checked out backend api to front end and display
+
+commit e4640165cad901b1bd45cd48c720771e805fe9a5
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 11:41:43 2025 -0500
+
+    create jwt extraction method to slice email out of access token
+
+commit 1742087524a2e361d7fb765092d1d8ae6666143e
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Jan 1 00:57:11 2025 -0500
+
+    configure security
+
+commit 12c52232d768056c4ca2e7e3169d7fb20aee6fd2
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 23:49:56 2024 -0500
+
+    add mapping for how many books a user has checked out and if a book is checked out by the user or not
+
+commit 60aea09335652580d00050508fa151f5e3b21e27
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 23:28:04 2024 -0500
+
+    create controller to make book service usable via mapping
+
+commit 7fa352c6cd315c70348da8e3de2545cf5b1b4c31
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 23:19:57 2024 -0500
+
+    create service for book checkout
+
+commit a4e152560ac9b4916f26b31a26a6c5385675e4f5
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 23:09:55 2024 -0500
+
+    create checkout repository
+
+commit 0285ed74c2716c420039be6a0fabfe10ac01857b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 23:05:17 2024 -0500
+
+    create checkout entity for checkout tablein database
+
+commit 0d93b91f79cf8c933378365c34beaf3ca33c7736
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 22:45:57 2024 -0500
+
+    add rest repository resource annotation over review repo
+
+commit ed3ca05137d60bc39279200f1f89a320b152f7bd
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 22:44:19 2024 -0500
+
+    replace all a tags on homepage components with Link. change word on link buttons based on if a user is signed in or not
+
+commit f5f512b6a559fe00d360c79e5d79030321cf060d
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 19:39:36 2024 -0500
+
+    add login routes and security route
+
+commit 7df22730a6e2622ed066724c979806a47b63bfbe
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 19:04:08 2024 -0500
+
+    add okta configuration to app component
+
+commit 5ff8dde08cd45489a67ccf419e95bb8a6aa5dece
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 18:07:15 2024 -0500
+
+    create okta sign in widget
+
+commit 09501089388d994dd36dc672e00740dd43d396c9
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 17:53:19 2024 -0500
+
+    create auth directory. create Login Widget.
+
+commit f86bd325186d4dfa289e7bb1815510852e6e0ce4
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 31 17:42:01 2024 -0500
+
+    create okta config file. download okta dependencies
+
+commit 3ea2b3eb9de5130bf9f9a378a90dd5ec32c3eb73
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Dec 29 00:34:35 2024 -0500
+
+    add findBookById parameter to search for books in reviews by id
+
+commit da6c4ca79b88f08d9e68f4fe0eab4335e07e4d51
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Dec 29 00:33:00 2024 -0500
+
+    add reviews to checkout book page
+
+commit 1b7f5256dff4cbbd58c8993fe75d5097ce3d8ed7
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 23:15:11 2024 -0500
+
+    expose ids for review class in config file
+
+commit 14ac16e9d6d0e558d1f21ea1738229957275b9d3
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 23:10:05 2024 -0500
+
+    create entity and repository for review table
+
+commit a94176e9f5d3e4ec44a90bd3c2f71b4f559a89a6
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 23:00:12 2024 -0500
+
+    add review logic and box to show book availabilty to checkout book page
+
+commit 334ea9261823771fcffb4558107f28370d0bab1a
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 20:17:03 2024 -0500
+
+    add book detail page for when users click to view details on a book in the search page
+
+commit a260c1126294091ba098dfa9427a3f23312e901b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 15:56:00 2024 -0500
+
+    adjust style when there is no content to display in outlet. change hover style for footer
+
+commit 60c475426e1c5a52fd3df1862172eda4ac083753
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 15:35:33 2024 -0500
+
+    replace a tags with link tags
+
+commit 7f221c3d4a5363becb9897964a2ecd59687bfac4
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 15:12:01 2024 -0500
+
+    change active and focus styles for nav. Clean up app component of unnecessary imports
+
+commit a1e99a479e162cb056d8feac203d135abfbd87a4
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 14:53:54 2024 -0500
+
+    create a layout component so that nav and footer always display with outlet for different paths. Add layout to app component
+
+commit 7c1fe154211868e42dba7bfb634428e675fe3e63
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 14:43:02 2024 -0500
+
+    replace a tags with navlinks for page in navbar. use link tag for logo img
+
+commit 2a8abf65d7024e5d67e165ad363f742acfd419cb
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 28 14:03:13 2024 -0500
+
+    add react router to front end
+
+commit fa04f46f4f7f3d051260e0d61952f64274d525ae
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Dec 26 00:51:19 2024 -0500
+
+    add function to handle category changes and use endpoint configured in the backend
+
+commit 3b2053ac2437e3be5a8c984f89c6574254c2b378
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Dec 26 00:09:30 2024 -0500
+
+    add findByCategory to book repository so that users can filter by book category
+
+commit 2546a7bba62e557f6eed84005d88225486c99e01
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Dec 26 00:05:11 2024 -0500
+
+    add backend functionality for user search parameters
+
+commit 55deb0db30aed2190b027dc11f41a715cf93eee8
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Thu Dec 26 00:04:22 2024 -0500
+
+    display message to users when a book they are searching for cannot be found
+
+commit 7d4a71931e5374af5b183cb1876ab45b2ff1b9a9
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 23:44:52 2024 -0500
+
+    configure backend to handle search by title. configure frontend to use backend configuration and display results to users
+
+commit 4cbd4fc9d0e80960b0746d28ccff357af4b61da6
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 20:49:54 2024 -0500
+
+    clean up unused list item. test searchbooks page by displaying in app.jsx
+
+commit 701131dd26b2d9e85560769e78d199cf192ffbf7
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 20:48:24 2024 -0500
+
+    create pagination util file
+
+commit dc990941836dbe6ea2534c2ff1934d7a9ee61202
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 20:47:43 2024 -0500
+
+    clean up destructure of book props to only include ones used
+
+commit 6313c023267b5ad90d5fae0b1ec91c115ed6d7bd
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 20:46:22 2024 -0500
+
+    add mobile view to searchbooks page
+
+commit 63dd61b69202102d5928a2a266ebde72beed7848
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 18:12:51 2024 -0500
+
+    add search books page under pages. add a folder for this page under componenets
+
+commit d03aad94e35ff302a9fb949e1d6d3cae68c629f6
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 14:56:39 2024 -0500
+
+    add utils folder and loading spinner file within that folder
+
+commit c53dd7442ceb48531f6760433050edfc84d5a082
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 14:38:10 2024 -0500
+
+    change allowed origin as React front-end is running on 5173 not 3000
+
+commit cdc23c00243ce81940828045027974330ea5ed54
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 14:36:17 2024 -0500
+
+    fetch backend data and replace static components with fetched data.
+
+commit 3bdc55efe4070e652a064ed243320aa794be1625
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 25 12:30:56 2024 -0500
+
+    create model folder. create book model class to prepare frontend to consume api from backend
+
+commit 43d420fc733acd99ac962b7a36af2b4859de668e
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 24 14:33:31 2024 -0500
+
+    make database read only to users
+
+commit 7d41824cfc52ed9df8adb038edc89e81417d0cc3
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 24 14:02:53 2024 -0500
+
+    add dao package folder. add bookrepository. add additional properties
+
+commit d234899d94d07e2af93876aab4e5e2658c3f7f47
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 24 13:12:00 2024 -0500
+
+    add entity folder. add book entity for book table
+
+commit 81a38099c301f2cdee1044ff0e9290a918793b6c
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Tue Dec 24 12:58:48 2024 -0500
+
+    add datasource
+
+commit d4fdc4df5424f670fe00825d7b04d6cb89a00f05
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Dec 23 20:47:29 2024 -0500
+
+    create backend template with dependencies in spring initializer. Add to backend folder.
+
+commit 4d897eb990275c438809fc1064a987e7a647c15b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 18 21:14:24 2024 -0500
+
+    add footer. Move all components except nav and footer into home page
+
+commit cc95083e135820393f877ee4c5e65db711afcf9d
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Dec 16 23:03:48 2024 -0500
+
+    add action prompt for users that need assistance
+
+commit 11a3337a237ed7d1e899cf88e892113c41cca9ba
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Mon Dec 16 22:51:57 2024 -0500
+
+    create call to action prompt below carousel. add images for action prompt
+
+commit b10c519c53007f27b2b9eea50942d6e507dcc1e1
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sun Dec 15 01:31:08 2024 -0500
+
+    create and style carousel. add book image to assets
+
+commit e0ca72ab9caa77df79ec2ac56b6a97f1a4d7d665
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 14 23:57:03 2024 -0500
+
+    add bg image to hero. Style hero section
+
+commit 232875301038147a888c542e9e62f594c292f77b
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 14 23:22:55 2024 -0500
+
+    add hero component. add component to App.
+
+commit 091702831ffdc0db35651bcb5729ec7ebb866f08
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 14 22:33:52 2024 -0500
+
+    add pages folder to organize all pages on this website
+
+commit a3141964944e9a40ae68bbe41590b181fac5c555
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 14 22:06:28 2024 -0500
+
+    add trasition to hover
+
+commit e332f6351af754a3a2697222cb9718d1a940cab6
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Sat Dec 14 14:44:20 2024 -0500
+
+    change logo. Change color being used for site to match new logo
+
+commit afdcbca9b9a7acf9823657167d0d77dcf3535ede
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Dec 13 23:02:59 2024 -0500
+
+    create Navbar component. Cut navbar code into this file
+
+commit b6c843387fb1cbb93b6a8b8c9b672ab2b81ecdd1
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Fri Dec 13 22:59:20 2024 -0500
+
+    add bootstrap as a dependency. create navbar with logo, links and btn
+
+commit 4a54910ff4712576012c0eb3ba285ac775d6d83f
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 11 14:15:38 2024 -0500
+
+    add bootstrap cdn links
+
+commit c24340439f66b9ada3e3eb906542601c287c8b04
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 11 14:10:28 2024 -0500
+
+    upgrade to react 19
+
+commit 73e7d18bd3c358903e057f45cce28657378fc07c
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 11 13:40:13 2024 -0500
+
+    clean up template files a bit
+
+commit 55ff2a501f2ac68d283e7f3dad4249201b65d387
+Author: kayla-pagan <114839282+kayla-pagan@users.noreply.github.com>
+Date:   Wed Dec 11 13:33:45 2024 -0500
+
+    create vite project template for react-ts
+
+commit 9fc6ffc41125bf066f7232b04d25e70e3dbb67ad
+Author: Emilio Miller <emilio.miller@siriusfederal.com>
+Date:   Wed Jul 17 02:48:21 2024 +0000
+
+    Corrected mispelling
+
+commit 808c354cd35e0a9c47841b13f6d2916a8950fcf9
+Author: Zohar Sajith <zohar.sajith@cdw.com>
+Date:   Mon Feb 27 18:18:19 2023 +0000
+
+    Added Branching instructions to README
+
+commit 5c6cab3370d38263505cb408a3c47ced40e9211e
+Author: Zohar Sajith <zohar.sajith@cdw.com>
+Date:   Mon Feb 13 15:45:36 2023 +0000
+
+    Added WGU Template README.md
+
+commit 835201f0562fa7fd2a47c06be1742da2ba56f12c
+Author: Zohar Sajith <zohar.sajith@cdw.com>
+Date:   Mon Feb 13 15:42:43 2023 +0000
+
+    Initial commit
