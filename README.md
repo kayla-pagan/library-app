@@ -4,9 +4,13 @@ This repository contains my **Software Engineering Capstone Project**, a Full St
 
 ---
 
-## Access the Application
-You can access the live application here:  
-[**Main Avenue Books**](https://mainavebooks.com/)
+## 🚫 Project Archived
+
+This project is no longer actively maintained and has been archived.
+
+The associated AWS environment (Elastic Beanstalk, RDS, Route 53, etc.) has been fully deactivated to avoid ongoing infrastructure costs. As a result, the live application and backend services are no longer accessible.
+
+All code and configuration files remain available for reference.
 
 ---
 
